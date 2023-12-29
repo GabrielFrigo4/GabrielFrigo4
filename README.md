@@ -3,5 +3,5 @@
 
 links:
 [linkedin](https://www.linkedin.com/in/gabriel-frigo-b6727b275)
-[lattes](https://gamejolt.com/@cacarumbaZ)
+[lattes](https://lattes.cnpq.br/1721099873501687)
 [game jolt](https://gamejolt.com/@cacarumbaZ)
