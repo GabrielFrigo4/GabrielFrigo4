@@ -22,7 +22,7 @@
 ### 🤝 Bora trocar uma ideia?
  Sempre topo conversar sobre otimização, desenvolvimento de jogos, programação competitiva ou sobre como ensinar tecnologia (já que também atuo como Mentor e co-idealizador de projetos de extensão na UFABC).
 
- [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gabriel-frigo-b6727b275)
+ [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/gabriel-frigo-b6727b275)
  [![Game Jolt](https://img.shields.io/badge/Game_Jolt-2f7f6f?style=for-the-badge&logo=game-jolt&logoColor=white)](https://gamejolt.com/@cacarumbaZ)
  [![Currículo Formal](https://img.shields.io/badge/Currículos_PDF-gray?style=for-the-badge&logo=github)](https://github.com/GabrielFrigo4/Resumes)
  [![Lattes](https://img.shields.io/badge/Currículo_Lattes-00599C?style=for-the-badge)](https://lattes.cnpq.br/1721099873501687)
