@@ -11,19 +11,19 @@ Meu foco principal é em **baixa abstração, alta performance e desenvolvimento
     <tr>
       <td align="center" valign="top">
         <a href="https://github.com/GabrielFrigo4">
-          <img src="https://github-readme-stats.vercel.app/api?username=GabrielFrigo4&show_icons=true&theme=radical&include_all_commits=true&count_private=true" height="195" alt="GitHub Stats" />
+          <img src="https://github-readme-stats.vercel.app/api?username=GabrielFrigo4&show_icons=true&theme=radical&include_all_commits=true&count_private=true" height="200" alt="GitHub Stats" />
         </a>
       </td>
       <td align="center" valign="top">
         <a href="https://codeforces.com/profile/Gerbunte">
-          <img src="https://codeforces-readme-stats.vercel.app/api/card?username=Gerbunte&theme=radical" height="195" alt="Codeforces Stats" />
+          <img src="https://codeforces-readme-stats.vercel.app/api/card?username=Gerbunte&theme=radical" height="200" alt="Codeforces Stats" />
         </a>
       </td>
     </tr>
     <tr>
       <td colspan="2" align="center">
         <a href="https://github.com/GabrielFrigo4">
-          <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=GabrielFrigo4&layout=compact&langs_count=8&theme=radical&hide=html,css" width="100%" alt="Top Languages" />
+          <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=GabrielFrigo4&layout=compact&langs_count=8&theme=radical&hide=html,css" width="90%" alt="Top Languages" />
         </a>
       </td>
     </tr>
