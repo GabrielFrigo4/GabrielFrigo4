@@ -16,7 +16,7 @@ Meu foco principal é em **baixa abstração, alta performance e desenvolvimento
       </td>
       <td>
         <a href="https://codeforces.com/profile/Gerbunte">
-          <img height="180em" src="https://codeforces-readme-stats.vercel.app/api/card?username=sensei_briel&theme=radical" />
+          <img height="180em" src="https://codeforces-readme-stats.vercel.app/api/card?username=Gerbunte&theme=radical" />
         </a>
       </td>
     </tr>
