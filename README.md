@@ -52,7 +52,7 @@ Eu uso o GitHub como meu laboratório pessoal. Meus repositórios geralmente gir
 
 Sempre topo conversar sobre otimização, desenvolvimento de jogos, programação competitiva ou sobre como ensinar tecnologia (já que também atuo como Mentor e co-idealizador de projetos de extensão na UFABC).
 
-<div align="left">
+<div align="center">
   <a href="https://gabrielfrigo.dev.br">
     <img src="https://img.shields.io/badge/gabrielfrigo.dev.br-000000?style=for-the-badge&logo=google-chrome&logoColor=white" />
   </a>
