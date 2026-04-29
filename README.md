@@ -23,7 +23,7 @@ Meu foco principal é em **baixa abstração, alta performance e desenvolvimento
     <tr>
       <td colspan="2" align="center">
         <a href="https://github.com/GabrielFrigo4">
-          <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=GabrielFrigo4&layout=compact&langs_count=8&theme=radical&hide=html,css" alt="Top Languages" />
+          <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=GabrielFrigo4&layout=compact&langs_count=4&theme=radical&hide=html,css" width="100%" alt="Top Languages" />
         </a>
       </td>
     </tr>
