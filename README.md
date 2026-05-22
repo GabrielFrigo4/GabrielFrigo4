@@ -6,10 +6,6 @@ Meu foco principal é em **baixa abstração, alta performance e desenvolvimento
 
 ## 📊 Métricas e Performance
 
-## 📊 Métricas e Performance
-
-## 📊 Métricas e Performance
-
 <div align="center">
   <table>
     <tr>
