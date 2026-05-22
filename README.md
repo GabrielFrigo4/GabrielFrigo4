@@ -6,8 +6,6 @@ Meu foco principal é em **baixa abstração, alta performance e desenvolvimento
 
 ## 📊 Métricas e Performance
 
-## 📊 Métricas e Performance
-
 <div align="center">
   <a href="https://github.com/GabrielFrigo4">
     <img src="https://github-readme-stats-beta-lime-83.vercel.app/api/top-langs/?username=GabrielFrigo4&layout=compact&langs_count=6&theme=radical&hide=html,css&v=1" height="195" alt="Top Languages" />
@@ -18,7 +16,7 @@ Meu foco principal é em **baixa abstração, alta performance e desenvolvimento
   </a>
   <br><br>
   <a href="https://github.com/GabrielFrigo4">
-    <img src="https://github-readme-stats-beta-lime-83.vercel.app/api?username=GabrielFrigo4&show_icons=true&theme=radical&include_all_commits=true&count_private=true&v=1" alt="GitHub Stats" />
+    <img src="https://github-readme-stats-beta-lime-83.vercel.app/api?username=GabrielFrigo4&show_icons=true&theme=radical&include_all_commits=true&count_private=true&v=1" height="195" alt="GitHub Stats" />
   </a>
 </div>
 
