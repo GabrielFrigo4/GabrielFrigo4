@@ -10,11 +10,11 @@ Meu foco principal é em **baixa abstração, alta performance e desenvolvimento
 
 <div align="center">
   <a href="https://github.com/GabrielFrigo4">
-    <img src="https://github-readme-stats.vercel.app/api?username=GabrielFrigo4&show_icons=true&theme=radical&include_all_commits=true&count_private=true" height="195" alt="GitHub Stats" />
+    <img src="github-readme-stats-beta-lime-83.vercel.app/api?username=GabrielFrigo4&show_icons=true&theme=radical&include_all_commits=true&count_private=true" height="195" alt="GitHub Stats" />
   </a>
   &nbsp;&nbsp;
   <a href="https://codeforces.com/profile/Gerbunte">
-    <img src="https://codeforces-readme-stats.vercel.app/api/card?username=Gerbunte&theme=radical" height="195" alt="Codeforces Stats" />
+    <img src="github-readme-stats-beta-lime-83.vercel.app/api/card?username=Gerbunte&theme=radical" height="195" alt="Codeforces Stats" />
   </a>
 
   <br><br>
