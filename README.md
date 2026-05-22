@@ -6,10 +6,6 @@ Meu foco principal é em **baixa abstração, alta performance e desenvolvimento
 
 ## 📊 Métricas e Performance
 
-## 📊 Métricas e Performance
-
-## 📊 Métricas e Performance
-
 <div align="center">
   <a href="https://github.com/GabrielFrigo4">
     <img src="https://github-readme-stats-beta-lime-83.vercel.app/api?username=GabrielFrigo4&show_icons=true&theme=radical&include_all_commits=true&count_private=true" height="195" alt="GitHub Stats" />
