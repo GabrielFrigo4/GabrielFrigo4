@@ -8,24 +8,23 @@ Meu foco principal é em **baixa abstração, alta performance e desenvolvimento
 
 ## 📊 Métricas e Performance
 
+## 📊 Métricas e Performance
+
 <div align="center">
-  <table border="0">
+  <table>
     <tr>
       <td align="center">
         <a href="https://github.com/GabrielFrigo4">
-          <img src="https://github-readme-stats-beta-lime-83.vercel.app/api?username=GabrielFrigo4&show_icons=true&theme=radical&include_all_commits=true&count_private=true" alt="GitHub Stats" />
+          <img src="https://github-readme-stats-beta-lime-83.vercel.app/api?username=GabrielFrigo4&show_icons=true&theme=radical&include_all_commits=true&count_private=true&v=4" alt="GitHub Stats" />
         </a>
-      </td>
-      <td rowspan="2" align="center" valign="middle">
-        <a href="https://codeforces.com/profile/Gerbunte">
-          <img src="https://codeforces-readme-stats.vercel.app/api/card?username=Gerbunte&theme=radical" alt="Codeforces Stats" />
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td align="center">
+        <br><br>
         <a href="https://github.com/GabrielFrigo4">
           <img src="https://github-readme-stats-beta-lime-83.vercel.app/api/top-langs/?username=GabrielFrigo4&layout=compact&langs_count=6&theme=radical&hide=html,css" alt="Top Languages" />
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://codeforces.com/profile/Gerbunte">
+          <img src="https://codeforces-readme-stats.vercel.app/api/card?username=Gerbunte&theme=radical" alt="Codeforces Stats" />
         </a>
       </td>
     </tr>
