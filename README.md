@@ -17,8 +17,8 @@ Busco o **equilíbrio de ouro**: fundamentos sólidos e perenes combinados com u
 flowchart TD
     subgraph S1 ["🏛️ 1. Fundamentos & Perto do Metal"]
         direction LR
-        UNIX["UNIX / POSIX: (FD + ID)<br/>VFS • Sockets • /dev • ioctl • kqueue"]
-        SEC["Capacidades & Segurança<br/>Capsicum (FreeBSD) • CHERI / CheriBSD"]
+        UNIX["UNIX / POSIX: FD + ID<br/>VFS • Sockets • /dev • ioctl • kqueue"]
+        SEC["Capacidades & Segurança<br/>Capsicum • CHERI • CheriBSD"]
         HW["Hardware & Silício<br/>Assembly • VHDL • FPGA"]
         HIST["Padrões Clássicos & Históricos<br/>OpenGL • OpenCL • OpenAL"]
         UNIX ~~~ SEC ~~~ HW ~~~ HIST
@@ -27,15 +27,15 @@ flowchart TD
     subgraph S2 ["⚡ 2. Vanguarda Pragmática & Mínimo Denominador"]
         direction LR
         SDL_PHIL["Filosofia SDL & POSIX<br/>Mínimo Denominador da Indústria<br/>Estabilidade sem Hype Efêmero"]
-        MOD_GPU["GPU & Áudio Nativo<br/>SDL_GPU • WebGPU • QRhi<br/>OSS (FreeBSD) • ALSA (Linux) • SDL Audio"]
-        SYS_PRAG["Sistemas & Anti-Inchaço<br/>C23 • C++23 • Rust • Go • Zig • C# • Scala<br/>SQLite (WAL) • PocketBase • Let's Encrypt • OR-Tools"]
+        MOD_GPU["GPU & Áudio Nativo<br/>SDL_GPU • WebGPU • QRhi<br/>OSS • ALSA • SDL_Audio"]
+        SYS_PRAG["Sistemas & Anti-Inchaço<br/>C23 • C++23 • Rust • Go • Zig • C# • Scala<br/>SQLite • PocketBase • Let's Encrypt • OR-Tools"]
         SDL_PHIL ~~~ MOD_GPU ~~~ SYS_PRAG
     end
 
     subgraph S3 ["🎯 3. Ciência & Rigor Algorítmico"]
         direction LR
-        OPT["Otimização Combinatória & Grafos<br/>Network Flows (UFABC / PIBIC) • DIMACS"]
-        CP["Programação Competitiva<br/>ICPC (Final Nacional 2026) • Codeforces (Gerbunte)"]
+        OPT["Otimização Combinatória & Grafos<br/>Network Flows • DIMACS"]
+        CP["Programação Competitiva<br/>ICPC • Codeforces"]
         OPT ~~~ CP
     end
 
@@ -107,7 +107,7 @@ Meu GitHub é estruturado em torno de **6 ecossistemas federados e soberanos**, 
 ![CheriBSD](https://img.shields.io/badge/CheriBSD-Hardware_Capabilities-darkred)
 ![POSIX](https://img.shields.io/badge/Standards-POSIX.1-black?logo=linux&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-Servers_%26_Kernel-blue?logo=linux&logoColor=white)
-![Windows](<https://img.shields.io/badge/Windows_(MSYS2)-Supported-purple?logo=gitforwindows&logoColor=white>)
+![Windows](https://img.shields.io/badge/Windows-MSYS2-purple?logo=gitforwindows&logoColor=white)
 ![Hardware](https://img.shields.io/badge/Hardware-Assembly_%2F_VHDL_%2F_FPGA-teal)
 
 ### Linguagens de Programação
@@ -125,12 +125,13 @@ Meu GitHub é estruturado em torno de **6 ecossistemas federados e soberanos**, 
 
 ### Computação Gráfica, GPU & Áudio
 
-![SDL3](https://img.shields.io/badge/I%2FO-SDL3_%26_SDL__Audio-lightgrey?logo=libsdl&logoColor=white)
-![SDL_GPU](https://img.shields.io/badge/GPU-SDL__GPU-blue)
+![SDL3](https://img.shields.io/badge/Runtime-SDL3-informational?logo=libsdl&logoColor=white)
+![SDL_GPU](https://img.shields.io/badge/GPU-SDL__GPU-blue?logo=libsdl&logoColor=white)
+![SDL_Audio](https://img.shields.io/badge/Audio-SDL__Audio-blue?logo=libsdl&logoColor=white)
 ![WebGPU](https://img.shields.io/badge/GPU-WebGPU-orange?logo=w3c&logoColor=white)
 ![QRhi](https://img.shields.io/badge/GPU-QRhi-green?logo=qt&logoColor=white)
-![OSS](<https://img.shields.io/badge/Audio-OSS_(FreeBSD_/dev/dsp)-purple>)
-![ALSA](<https://img.shields.io/badge/Audio-ALSA_(Linux_Kernel)-blue>)
+![OSS](https://img.shields.io/badge/Audio-OSS-purple?logo=freebsd&logoColor=white)
+![ALSA](https://img.shields.io/badge/Audio-ALSA-blue?logo=linux&logoColor=white)
 ![ImGui](https://img.shields.io/badge/Tooling-Dear_ImGui-red)
 ![GLFW](https://img.shields.io/badge/Context-GLFW3-black)
 ![GLAD](https://img.shields.io/badge/Loader-GLAD_1_%26_2-gray)
@@ -140,9 +141,9 @@ Meu GitHub é estruturado em torno de **6 ecossistemas federados e soberanos**, 
 
 ### Filosofia Arquitetural & Motores de Decisão
 
-![SQLite](<https://img.shields.io/badge/Database-SQLite_(WAL_Mode)-003B57?logo=sqlite&logoColor=white>)
-![PocketBase](<https://img.shields.io/badge/Backend-PocketBase_(Go)-B8DBE8?logo=pocketbase&logoColor=white>)
-![Let's Encrypt](<https://img.shields.io/badge/Security-Let's_Encrypt_(Autocert)-003A70?logo=letsencrypt&logoColor=white>)
+![SQLite](https://img.shields.io/badge/Database-SQLite-003B57?logo=sqlite&logoColor=white)
+![PocketBase](https://img.shields.io/badge/Backend-PocketBase-B8DBE8?logo=pocketbase&logoColor=white)
+![Let's Encrypt](https://img.shields.io/badge/Security-Let's_Encrypt-003A70?logo=letsencrypt&logoColor=white)
 ![OR-Tools](https://img.shields.io/badge/Solvers-Google_OR--Tools-4285F4?logo=google&logoColor=white)
 
 ---
