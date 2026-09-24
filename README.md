@@ -9,56 +9,67 @@ Troquei as competições de matemática e astronomia (onde conquistei algumas me
 
 ## 🧠 Filosofia de Engenharia: A Tríade Canônica
 
-Minha atuação técnica rejeita os dois extremos rasos do desenvolvimento de software: **rejeito a alienação das caixas-pretas de altíssimo nível** (que escondem a mecânica do hardware e do kernel) e **rejeito a burocracia bizantina desnecessária** (como escrever 1.500 linhas de boilerplate manual em Vulkan ou DirectX 12 direto para desenhar uma primitiva).
+Minha atuação técnica rejeita os dois extremos rasos do desenvolvimento de software: **rejeito a alienação das caixas-pretas de altíssimo nível** (que ocultam a mecânica do hardware e do kernel) e **rejeito a burocracia bizantina desnecessária** (como escrever 1.500 linhas de boilerplate manual em Vulkan ou DirectX 12 direto para desenhar uma primitiva).
 
-Busco o **equilíbrio de ouro**: fundamentos sólidos e perenes combinados com uma vanguarda pragmática e explícita.
+Busco o **equilíbrio de ouro**: fundamentos sólidos e perenes combinados com uma vanguarda pragmática, sem inchaço operacional.
 
 ```mermaid
 flowchart TD
     subgraph S1 ["🏛️ 1. Fundamentos & Perto do Metal"]
-        UNIX["UNIX / POSIX: (FD + ID)<br/>VFS, Sockets, Nós /dev, ioctl, kqueue/epoll"]
-        SEC["Capacidades & Segurança Moderna<br/>Capsicum (FreeBSD) • CHERI / CheriBSD (Hardware)"]
-        HW["Hardware & Portas Lógicas<br/>Assembly • VHDL • FPGA"]
-        HIST["Computação Gráfica Clássica<br/>GLFW3 • GLAD 1/2 • SDL3 • OpenGL & OpenCL (Histórico)"]
+        direction LR
+        UNIX["UNIX / POSIX: (FD + ID)<br/>VFS • Sockets • /dev • ioctl • kqueue"]
+        SEC["Capacidades & Segurança<br/>Capsicum (FreeBSD) • CHERI / CheriBSD"]
+        HW["Hardware & Silício<br/>Assembly • VHDL • FPGA"]
+        HIST["Padrões Clássicos & Históricos<br/>OpenGL • OpenCL • ALSA • OpenAL"]
     end
 
-    subgraph S2 ["⚡ 2. Vanguarda Pragmática (O Doce Ponto Moderno)"]
-        MOD_GPU["Pipeline Gráfica Moderna sem Burocracia Bizantina<br/>SDL_GPU • WebGPU • QRhi (Mínimo Denominador Comum)"]
-        TOOL["Tooling & Ferramental Imediato<br/>Dear ImGui • ALSA • OpenAL"]
-        LANG["Linguagens Modernas & Sistemas<br/>C23 • C++23 • Rust • Go • Elisp"]
+    subgraph S2 ["⚡ 2. Vanguarda Pragmática & Mínimo Denominador"]
+        direction LR
+        SDL_PHIL["Filosofia SDL & POSIX<br/>Mínimo Denominador Comum da Indústria<br/>Estabilidade Absoluta sem Hype Efêmero"]
+        MOD_GPU["GPU & Áudio Modernos<br/>SDL_GPU • WebGPU • QRhi<br/>OSS (/dev/dsp) • SDL Audio • Dear ImGui"]
+        SYS_PRAG["Sistemas & Filosofia Anti-Inchaço<br/>C23 • C++23 • Rust • Go • Zig • C# • Scala<br/>PocketBase (SQLite WAL) • Google OR-Tools"]
     end
 
     subgraph S3 ["🎯 3. Ciência & Rigor Algorítmico"]
-        OPT["Otimização Combinatória & Teoria dos Grafos<br/>Pesquisa em Fluxos em Digrafos (UFABC / PIBIC)"]
-        CP["Programação Competitiva de Alto Desempenho<br/>ICPC (Final Nacional 2026) • Codeforces (Gerbunte) • OBI"]
+        direction LR
+        OPT["Otimização Combinatória & Grafos<br/>Network Flows (UFABC / PIBIC) • DIMACS"]
+        CP["Programação Competitiva<br/>ICPC (Final Nacional 2026) • Codeforces (Gerbunte)"]
     end
 
     S1 --> S2 --> S3
 ```
 
-### 1. O Núcleo UNIX: Desmistificando o Sistema via (FD + ID) & Capabilities
+### 1. O Núcleo UNIX: (FD + ID) & Capabilities no Software e Silício
 
 Acredito que o domínio de um sistema operacional tipo Unix se resume à compreensão profunda de duas primitivas atemporais:
 
-- **Descritores de Arquivo (FD):** Sockets _são_ descritores de arquivo. Sockets, pipes, FIFOs, arquivos no VFS, dispositivos em `/dev`, multiplexação de eventos (`kqueue`/`epoll`/`poll`) e canais de áudio (ALSA/OSS) operam todos sob a mesma semântica pura de stream e descritor.
+- **Descritores de Arquivo (FD):** Sockets _são_ descritores de arquivo. Sockets, pipes, FIFOs, arquivos no VFS, dispositivos em `/dev`, multiplexação de eventos (`kqueue`/`epoll`) e canais de áudio nativos (**OSS** no FreeBSD via `/dev/dsp`) operam todos sob a mesma semântica pura de stream e descritor.
 - **Identificadores & Credenciais (ID):** O modelo de processos e isolamento (UID, GID, EUID, PID, namespaces e controle de acesso).
 - **A Próxima Fronteira das Capacidades:** A evolução desse modelo em direção à segurança por privilégio mínimo:
     - _No nível de software:_ **Capsicum** (FreeBSD), eliminando o namespace global e operando estritamente sobre direitos delegados a FDs.
     - _No nível de hardware e silício:_ **CHERI** e **CheriBSD**, implementando segurança de memória com integridade de ponteiros e limites espaciais/temporais diretamente nas instruções da CPU.
-- **Espírito Hacker:** O prazer de construir e entender a base, estendendo-se para **Assembly**, **VHDL** e **FPGA**.
+- **Espírito Hacker & Hardware:** Curiosidade de entender a máquina do silício ao binário com **Assembly**, **VHDL** e **FPGA**.
 
-### 2. Computação Gráfica: A GPU Moderna sem Complexidade Bizantina
+### 2. A Filosofia SDL & POSIX: O Mínimo Denominador Comum
 
-- **Base Estável:** **GLFW3**, **GLAD (1 e 2)** e **SDL3** como fundações de janela, contexto e I/O.
-- **Estudo Histórico e Conceitual:** **OpenGL** e **OpenCL**, preservados e estudados como marcos da transição da pipeline fixa para a programável e do surgimento da computação paralela em GPU.
-- **O Ponto Ótimo Contemporâneo:** **SDL_GPU**, **WebGPU** e **QRhi**.
-    - Representam exatamente como as placas gráficas funcionam hoje (pipelines imutáveis, command buffers, pass encoders, bind groups e barreiras de memória explícitas).
-    - São o _mínimo denominador comum elegante_ entre Vulkan, Metal e DirectX 12 — entregando controle fino de GPU e shaders sem a burocracia bizantina de milhares de linhas de alocação de baixo nível, e anos-luz de distância da alienação de caixas-pretas de brinquedo (SFML, Raylib).
-    - **Dear ImGui** para instrumentação, dashboards de engine e depuração em tempo real.
+Existe uma profunda simetria entre o **POSIX** e a **SDL (Simple DirectMedia Layer)**:
 
-### 3. Ciência, Algoritmos & Maratonas
+- Ambos se recusam a perseguir hypes passageiros ou reinventar a roda a cada ciclo da moda.
+- Ambos operam como o **mínimo denominador comum** universal que permite a plataformas, drivers, displays e placas de som conversarem exatamente a mesma língua.
+- Não são tecnologias defasadas: são **maduras, ultra-estáveis e impecáveis no que se propõem a fazer**.
+- **A GPU Moderna sem Fricção Bizantina:** Adoção de **SDL_GPU**, **WebGPU** e **QRhi** — modelam a arquitetura real das placas modernas (pipelines imutáveis, command buffers, bind groups e barreiras explícitas) sem a burocracia de milhares de linhas de código bare-metal, e longe de caixas-pretas alienantes (SFML, Raylib).
+- **Áudio Nativo:** **OSS** (Open Sound System nativo do FreeBSD) e **SDL Audio** como base sólida; **OpenGL**, **OpenCL**, **ALSA** e **OpenAL** preservados e estudados como marcos históricos formativos.
 
-- **Iniciação Científica (UFABC / PIBIC):** Pesquisa focada em Problemas de Fluxos em Redes (_Network Flows_: Fluxo Máximo e Fluxo de Custo Mínimo), implementações de alta fidelidade em C++23 e testes com benchmarks canônicos da DIMACS.
+### 3. Sistemas, Ferramentas & Filosofia Anti-Complexidade
+
+Frameworks são passageiros; filosofias arquiteturais e linguagens robustas permanecem:
+
+- **Pragmatismo de Contexto:** Adoção de ferramentas pela sua filosofia, como o **PocketBase** (Go + SQLite em modo WAL em um único binário autônomo) para projetos que demandam simplicidade operacional e zero inchaço. Se um serviço não exige escala planetária distribuída, não há sentido em pagar o custo cognitivo de 50 microsserviços e PostgreSQL. Cada contexto dita sua solução ideal.
+- **Infraestrutura Soberana:** Uso do **FreeBSD** como sistema principal em workstation/notebook e na nuvem, explorando orquestração moderna com **Sylve** (o gestor de virtualização bhyve e Jails sobre ZFS), complementado por nós de computação Linux e estações Windows (MSYS2).
+
+### 4. Ciência, Algoritmos & Maratonas
+
+- **Iniciação Científica (UFABC / PIBIC):** Pesquisa focada em Problemas de Fluxos em Redes (_Network Flows_: Fluxo Máximo e Fluxo de Custo Mínimo), implementações de alta fidelidade em C++23 e validação com instâncias canônicas da DIMACS.
 - **Programação Competitiva:** Membro da equipe GRUB da UFABC. Treinamento intensivo focado na **Final Nacional do ICPC 2026**, Codeforces, Maratona Paulista e OBI.
 
 ---
@@ -67,51 +78,61 @@ Acredito que o domínio de um sistema operacional tipo Unix se resume à compree
 
 Meu GitHub é estruturado em torno de **6 ecossistemas federados e soberanos**, cada um atuando como um hub orquestrador independente:
 
-| Repositório Hub                                                                                                                          | Foco & Responsabilidade                                          | Tecnologias Centrais             | Componentes Canônicos                                                            |
-| :--------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------- | :------------------------------- | :------------------------------------------------------------------------------- |
-| [![Environment](https://img.shields.io/badge/🏛️_Environment-Hub-purple?style=flat-square)](https://github.com/GabrielFrigo4/environment) | Orquestrador de estações de trabalho e dotfiles soberanos        | POSIX Shell, Elisp, Lua, C       | `Setup`, `Shell`, `Vault`, `Profile`, `Emacs`, `Helix`, `NeoVim`, `Vim`          |
-| [![Core](https://img.shields.io/badge/⚡_Core-Hub-blue?style=flat-square)](https://github.com/GabrielFrigo4/core)                        | Utilitários de sistema, elevação de privilégios e acervo técnico | C99, POSIX.1, LaTeX, Git         | `Sysutils` (`rtdo`/`rtgo`), `Library` (Acervo CS/Math), `Raw Text`               |
-| [![Research](https://img.shields.io/badge/🔬_Research-Hub-teal?style=flat-square)](https://github.com/GabrielFrigo4/research)            | Pesquisa acadêmica em Otimização Combinatória e Grafos           | C++23, LaTeX, DIMACS             | `Network Flow` (Fluxo Máximo e Custo Mínimo, Livro & Relatórios)                 |
-| [![Training](https://img.shields.io/badge/🎯_Training-Hub-red?style=flat-square)](https://github.com/GabrielFrigo4/training)             | Hub de maratonas algorítmicas e programação competitiva          | C++23, Rust, Python, Bash        | `Algorithms` (Templates, CLI `cpt`, Handbook), `Marathon` (ICPC Nacional 2026)   |
-| [![Personal](https://img.shields.io/badge/🚀_Personal-Hub-green?style=flat-square)](https://github.com/GabrielFrigo4/personal)           | Engines de jogos, protocolos, servidores e laboratórios          | C/C++, Rust, SDL3, Lisp, Sockets | `Engines` (`RNG Engine`), `Systems` (`Posix Socket`, `SBL`, `BSD Emacs`), `Labs` |
-| [![Venture](https://img.shields.io/badge/💼_Venture-Hub-orange?style=flat-square)](https://github.com/GabrielFrigo4/venture)             | Soluções de mercado, logística operacional e produtos            | Go, Google OR-Tools, PocketBase  | `OptiLaser` (Motor de Otimização Logística VRPTW & Copiloto)                     |
+| Repositório Hub                                                                                                                                                    | Foco & Responsabilidade                                          | Tecnologias Centrais             | Componentes Canônicos                                                                 |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------- | :------------------------------- | :------------------------------------------------------------------------------------ |
+| [![environment](https://img.shields.io/badge/environment-hub-purple?style=flat-square&logo=freebsd&logoColor=white)](https://github.com/GabrielFrigo4/environment) | Orquestrador de estações de trabalho e dotfiles soberanos        | POSIX Shell, Elisp, Lua, C       | `Setup`, `Shell`, `Vault`, `Profile`, `Emacs`, `Helix`, `NeoVim`, `Vim`               |
+| [![foundation](https://img.shields.io/badge/foundation-hub-blue?style=flat-square&logo=linux&logoColor=white)](https://github.com/GabrielFrigo4/foundation)        | Utilitários de sistema, elevação de privilégios e acervo técnico | C99, POSIX.1, LaTeX, Git         | `Sysutils` (`rtdo`/`rtgo`), `Library` (Acervo CS/Math), `Raw Text`                    |
+| [![research](https://img.shields.io/badge/research-hub-teal?style=flat-square&logo=databricks&logoColor=white)](https://github.com/GabrielFrigo4/research)         | Pesquisa acadêmica em Otimização Combinatória e Grafos           | C++23, LaTeX, DIMACS             | `Network Flow` (Fluxo Máximo e Custo Mínimo, Livro & Relatórios)                      |
+| [![training](https://img.shields.io/badge/training-hub-red?style=flat-square&logo=cplusplus&logoColor=white)](https://github.com/GabrielFrigo4/training)           | Hub de maratonas algorítmicas e programação competitiva          | C++23, Rust, Python, Bash        | `Algorithms` (Templates, CLI `cpt`, Handbook), `Marathon` (ICPC Nacional 2026)        |
+| [![personal](https://img.shields.io/badge/personal-hub-green?style=flat-square&logo=rust&logoColor=white)](https://github.com/GabrielFrigo4/personal)              | Engines de jogos, protocolos, servidores e laboratórios          | C/C++, Rust, SDL3, Lisp, Sockets | `Engines` (`RNG Engine`), `Systems` (`Posix Socket`, `BSD Lib`, `Orb Kernel`), `Labs` |
+| [![venture](https://img.shields.io/badge/venture-hub-orange?style=flat-square&logo=go&logoColor=white)](https://github.com/GabrielFrigo4/venture)                  | Soluções de mercado, logística operacional e produtos            | Go, Google OR-Tools, PocketBase  | `OptiLaser` (Motor de Otimização Logística VRPTW & Copiloto)                          |
 
 ---
 
 ## 🛠️ Stack Tecnológico & Domínios
 
-### Sistemas & Perto do Metal
+### Sistemas Operacionais, Infra & Perto do Metal
+
+![FreeBSD](https://img.shields.io/badge/FreeBSD-Primary_OS_%26_Capsicum-red?logo=freebsd&logoColor=white)
+![Sylve](https://img.shields.io/badge/Sylve-Jails_%26_bhyve-blue)
+![OpenZFS](https://img.shields.io/badge/Storage-OpenZFS-black?logo=openzfs&logoColor=white)
+![CheriBSD](https://img.shields.io/badge/CheriBSD-Hardware_Capabilities-darkred)
+![POSIX](https://img.shields.io/badge/Standards-POSIX.1-black?logo=linux&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-Servers_%26_Kernel-blue?logo=linux&logoColor=white)
+![Windows](<https://img.shields.io/badge/Windows_(MSYS2)-Supported-purple?logo=gitforwindows&logoColor=white>)
+![Hardware](https://img.shields.io/badge/Hardware-Assembly_%2F_VHDL_%2F_FPGA-teal)
+
+### Linguagens de Programação
 
 ![C](https://img.shields.io/badge/C-C99_%2F_C23-00599C?logo=c&logoColor=white)
 ![C++](https://img.shields.io/badge/C++-C++20_%2F_C++23-00599C?logo=cplusplus&logoColor=white)
-![POSIX](https://img.shields.io/badge/Standards-POSIX.1-black?logo=linux&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-Kernel_%26_VFS-blue?logo=linux&logoColor=white)
-![FreeBSD](https://img.shields.io/badge/FreeBSD-Capsicum_%26_kqueue-red?logo=freebsd&logoColor=white)
-![CheriBSD](https://img.shields.io/badge/CheriBSD-Hardware_Capabilities-darkred)
-![Assembly](https://img.shields.io/badge/Assembly-x86__64-yellow)
-![Hardware](https://img.shields.io/badge/Hardware-VHDL_%2F_FPGA-teal)
+![Rust](https://img.shields.io/badge/Rust-Systems_%26_Async-DEA584?logo=rust&logoColor=white)
+![Go](https://img.shields.io/badge/Go-Backend_%26_Concurrency-00ADD8?logo=go&logoColor=white)
+![Zig](https://img.shields.io/badge/Zig-Toolchain_%26_Systems-F7A41D?logo=zig&logoColor=white)
+![C#](https://img.shields.io/badge/C%23-DotNet-512BD4?logo=csharp&logoColor=white)
+![Scala](https://img.shields.io/badge/Scala-Functional-DC322F?logo=scala&logoColor=white)
+![Python](https://img.shields.io/badge/Python-Scripting_%26_CP-3776AB?logo=python&logoColor=white)
+![Lua](https://img.shields.io/badge/Lua-Embedded-2C2D72?logo=lua&logoColor=white)
+![Lisp](https://img.shields.io/badge/Lisp-Common_Lisp_%26_Elisp-purple?logo=lisp&logoColor=white)
 
-### Computação Gráfica, GPU & I/O
+### Computação Gráfica, GPU & Áudio
 
-![SDL3](https://img.shields.io/badge/I%2FO-SDL3-lightgrey?logo=libsdl&logoColor=white)
+![SDL3](https://img.shields.io/badge/I%2FO-SDL3_%26_SDL__Audio-lightgrey?logo=libsdl&logoColor=white)
 ![SDL_GPU](https://img.shields.io/badge/GPU-SDL__GPU-blue)
 ![WebGPU](https://img.shields.io/badge/GPU-WebGPU-orange?logo=w3c&logoColor=white)
 ![QRhi](https://img.shields.io/badge/GPU-QRhi-green?logo=qt&logoColor=white)
+![OSS](<https://img.shields.io/badge/Audio-OSS_(/dev/dsp)-purple>)
+![ImGui](https://img.shields.io/badge/Tooling-Dear_ImGui-red)
 ![GLFW](https://img.shields.io/badge/Context-GLFW3-black)
 ![GLAD](https://img.shields.io/badge/Loader-GLAD_1_%26_2-gray)
 ![OpenGL](https://img.shields.io/badge/Historical-OpenGL-5586A4?logo=opengl&logoColor=white)
 ![OpenCL](https://img.shields.io/badge/Historical-OpenCL-blue?logo=opencl&logoColor=white)
-![Dear ImGui](https://img.shields.io/badge/Tooling-Dear_ImGui-red)
-![Audio](https://img.shields.io/badge/Audio-ALSA_%2F_OpenAL-purple)
+![ALSA](https://img.shields.io/badge/Historical-ALSA_%2F_OpenAL-darkblue)
 
-### Linguagens de Aplicação & Runtimes
+### Filosofia Arquitetural & Motores de Decisão
 
-![Rust](https://img.shields.io/badge/Rust-Tokio_%26_Axum-DEA584?logo=rust&logoColor=white)
-![Go](https://img.shields.io/badge/Go-Backend_%26_OR--Tools-00ADD8?logo=go&logoColor=white)
-![Python](https://img.shields.io/badge/Python-Scripting_%26_CP-3776AB?logo=python&logoColor=white)
-![Lua](https://img.shields.io/badge/Lua-Embedded-2C2D72?logo=lua&logoColor=white)
-![Common Lisp](https://img.shields.io/badge/Lisp-Symbolic_Computing-purple?logo=lisp&logoColor=white)
-![Emacs Lisp](https://img.shields.io/badge/Elisp-Editor_Runtime-indigo?logo=gnuemacs&logoColor=white)
+![PocketBase](<https://img.shields.io/badge/Architecture-PocketBase_(SQLite_WAL)-B8DBE8?logo=pocketbase&logoColor=white>)
+![OR-Tools](https://img.shields.io/badge/Solvers-Google_OR--Tools-4285F4?logo=google&logoColor=white)
 
 ---
 
@@ -149,7 +170,7 @@ Meu GitHub é estruturado em torno de **6 ecossistemas federados e soberanos**, 
   <a href="https://linkedin.com/in/gabriel-frigo-b6727b275">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
-  <a href="https://github.com/GabrielFrigo4/Resumes">
+  <a href="https://github.com/GabrielFrigo4/resumes">
     <img src="https://img.shields.io/badge/Currículos_PDF-gray?style=for-the-badge&logo=github&logoColor=white" alt="Resumes" />
   </a>
   <a href="https://lattes.cnpq.br/1721099873501687">
