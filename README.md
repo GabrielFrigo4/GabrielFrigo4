@@ -82,6 +82,43 @@ Frameworks são passageiros; filosofias arquiteturais e linguagens robustas perm
 
 ---
 
+## ⚡ Ferramental Hacker: Editores Modais, Shells & IA Socrática
+
+### Editores Modais & Ergonomia de Teclado
+
+Navegação orientada a texto puro, latência imperceptível e controle estrito das mãos no teclado sem a dependência dispersiva do mouse:
+
+- **Helix:** O editor modal moderno por excelência. Seleção-ação invertida (`selection -> action`), tree-sitter nativo out-of-the-box e LSP integrado sem atrito de configuração.
+- **Vim & NeoVim:** O padrão atemporal e sua evolução moderna extensível com Lua, explorando todo o poder de syntax trees e plugins assíncronos.
+- **GNU Emacs:** Mais do que um editor, uma plataforma computacional Lisp completa. Configurado de ponta a ponta com o gerenciador de pacotes transacional **Elpaca**, LSP nativo via **Eglot**, **Org Mode** para gestão de tarefas e conhecimento, e ciclo de vida conectado via **daemon/socket Unix** nativo.
+- **Code-OSS / VS Code:** Preservado para depuração visual assistida, inspeções gráficas e ecossistemas específicos onde a interface visual acelera fluxos pontuais.
+
+### Shells & Runtimes de Terminal: Do POSIX ao Windows
+
+Uma estação de trabalho soberana e resiliente exige consistência entre sistemas operacionais, com uma taxonomia clara de execução e ergonomia:
+
+- **Ambientes UNIX / POSIX (`Environment/Shell`):**
+    - **Zsh:** Shell interativo primário com 100% de suporte, focado em máxima produtividade, autocompletion preditivo e ergonomia diária de prompt.
+    - **Bash:** O cavalo de batalha universal com 100% de suporte para portabilidade estrita em contêineres, servidores headless e automação CI/CD.
+    - **FreeBSD `/bin/sh`:** O shell nativo do FreeBSD — ultra-rápido, estritamente POSIX, sem inchaço e sem dependências externas.
+    - **OpenBSD `/bin/ksh`:** KornShell canônico focado em minimalismo, segurança inabalável e conformidade de sistema.
+    - _Rejeição Deliberada:_ Descarte de shells que quebram a semântica POSIX padrão (como Dash em modo interativo ou Fish), garantindo scripts reproduzíveis em qualquer máquina.
+- **Ambientes Windows:**
+    - **PowerShell (`pwsh`):** Para automação nativa robusta orientada a objetos no subsistema Windows.
+    - **Nushell (`nu`):** Paradigma moderno de pipelines com tabelas de dados estruturados e tipagem estrita no terminal.
+    - **Command Prompt (`cmd.exe`) com Clink:** O prompt nativo do Windows turbinado com **Clink**, que injeta dinamicamente a biblioteca **GNU Readline** e scripting **Lua** (`profile.lua`), trazendo auto-sugestões, histórico persistente inteligente e keybindings Vi diretamente para o terminal legado.
+
+### Inteligência Artificial Agêntica & O Método Socrático
+
+O uso de inteligência artificial generativa em engenharia de software não deve ser um atalho preguiçoso ("vibe coding"), mas sim uma ferramenta de **amplificação cognitiva de altíssimo rigor**:
+
+- **A Plataforma Google Antigravity:** Adoção e domínio profundo de todo o ecossistema Antigravity — **Antigravity CLI (`agy`)**, **Antigravity IDE**, **Antigravity 2.0** e o **Python SDK**, operando com workflows agênticos autônomos e controle total de ferramentas de sistema.
+- **Engenharia de Contexto & IA como Tutora:** A IA opera como pair programmer, tutora epistemológica e arquiteta técnica orientada por contratos declarativos estritos: **Portable AI Skills (`SKILL.md`)** para conhecimento procedural especializado, **`AGENTS.md`** para diretrizes operacionais de cada repositório e **`PRINCIPLES.md`** para axiomas inegociáveis de design de software.
+- **O Método Socrático com IA (Epistemologia Rigorosa):**
+    > **Perguntar sempre, a toda hora e sobre tudo.** Jamais aceitar as afirmações de um modelo de linguagem como verdades consolidadas até que sejam submetidas a validações empíricas, testes adversariais e comprovação formal. No desenvolvimento de software perto do metal, **99% de certeza não basta** — o 1% restante é precisamente onde residem vazamentos de memória, undefined behaviors e falhas silenciosas de concorrência. A IA deve ser usada como uma contraparte socrática dialética: desafiando hipóteses, questionando decisões de arquitetura e elevando o rigor técnico a 100%.
+
+---
+
 ## 🏛️ O Sexteto de Engenharia (Os 6 Hubs Federados)
 
 Meu GitHub é estruturado em torno de **6 ecossistemas federados e soberanos**, cada um atuando como um hub orquestrador independente:
@@ -145,6 +182,31 @@ Meu GitHub é estruturado em torno de **6 ecossistemas federados e soberanos**, 
 ![PocketBase](https://img.shields.io/badge/Backend-PocketBase-B8DBE8?logo=pocketbase&logoColor=white)
 ![Let's Encrypt](https://img.shields.io/badge/Security-Let's_Encrypt-003A70?logo=letsencrypt&logoColor=white)
 ![OR-Tools](https://img.shields.io/badge/Solvers-Google_OR--Tools-4285F4?logo=google&logoColor=white)
+
+### Editores & Ambientes de Desenvolvimento
+
+![Helix](https://img.shields.io/badge/Helix-Modal_Editor-2B2937?logo=helix&logoColor=white)
+![GNU Emacs](https://img.shields.io/badge/GNU_Emacs-Elpaca_%26_Eglot-7F5AB6?logo=gnuemacs&logoColor=white)
+![Neovim](https://img.shields.io/badge/Neovim-Lua_%26_Treesitter-57A143?logo=neovim&logoColor=white)
+![Vim](https://img.shields.io/badge/Vim-Modal_Classic-019733?logo=vim&logoColor=white)
+![VS Code](https://img.shields.io/badge/VS_Code-Code--OSS-007ACC?logo=visualstudiocode&logoColor=white)
+
+### Shells & Runtimes de Terminal
+
+![Zsh](https://img.shields.io/badge/Zsh-Interactive_Power-blue?logo=zsh&logoColor=white)
+![Bash](https://img.shields.io/badge/Bash-Universal_POSIX-green?logo=gnubash&logoColor=white)
+![FreeBSD sh](https://img.shields.io/badge/FreeBSD_sh-Pure_POSIX-red?logo=freebsd&logoColor=white)
+![OpenBSD ksh](https://img.shields.io/badge/OpenBSD_ksh-Minimal_Korn-yellow?logo=openbsd&logoColor=white)
+![PowerShell](https://img.shields.io/badge/PowerShell-pwsh-5391FE?logo=powershell&logoColor=white)
+![Nushell](https://img.shields.io/badge/Nushell-Structured_Data-4E9A06?logo=nushell&logoColor=white)
+![CMD + Clink](https://img.shields.io/badge/CMD-Clink_%26_Lua-4A5568?logo=lua&logoColor=white)
+
+### Plataformas de IA & Engenharia de Contexto
+
+![Antigravity](https://img.shields.io/badge/Google_Antigravity-CLI_%26_IDE_%26_2.0-4285F4?logo=google&logoColor=white)
+![Antigravity SDK](https://img.shields.io/badge/Antigravity-Python_SDK-3776AB?logo=python&logoColor=white)
+![AI Skills](https://img.shields.io/badge/AI_Governance-Skills_%26_AGENTS.md-teal)
+![Socratic Inquiry](https://img.shields.io/badge/Epistemologia-Método_Socrático-purple)
 
 ---
 
