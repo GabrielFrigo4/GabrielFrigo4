@@ -15,12 +15,12 @@ Busco o **equilíbrio de ouro**: fundamentos sólidos e perenes combinados com u
 
 ```mermaid
 flowchart TD
-    subgraph S1 ["🏛️ 1. Fundamentos & Perto do Metal"]
+    subgraph S1 ["🏛️ 1. Fundamentos, Sistemas & Perto do Metal"]
         direction LR
-        UNIX["UNIX / POSIX: FD + ID<br/>VFS • Sockets • /dev • ioctl • kqueue"]
-        SEC["Capacidades & Segurança<br/>Capsicum • CHERI • CheriBSD"]
+        UNIX["UNIX / POSIX / BSD<br/>FreeBSD • OpenBSD • Linux • PF<br/>VFS • Sockets • /dev • ioctl • kqueue"]
+        SEC["Capacidades & Segurança<br/>Capsicum • Pledge • Unveil • CHERI"]
         HW["Hardware & Silício<br/>Assembly • VHDL • FPGA"]
-        HIST["Padrões Clássicos & Históricos<br/>OpenGL • OpenCL • OpenAL"]
+        HIST["Padrões Clássicos<br/>OpenGL • OpenCL • OpenAL"]
         UNIX ~~~ SEC ~~~ HW ~~~ HIST
     end
 
@@ -28,7 +28,7 @@ flowchart TD
         direction LR
         SDL_PHIL["Filosofia SDL & POSIX<br/>Mínimo Denominador da Indústria<br/>Estabilidade sem Hype Efêmero"]
         MOD_GPU["GPU & Áudio Nativo<br/>SDL_GPU • WebGPU • QRhi<br/>OSS • ALSA • SDL_Audio"]
-        SYS_PRAG["Sistemas & Anti-Inchaço<br/>C23 • C++23 • Rust • Go • Zig • C# • Scala<br/>SQLite • PocketBase • Let's Encrypt • OR-Tools"]
+        SYS_PRAG["Sistemas & Bancos de Dados<br/>C23 • C++23 • Rust • Go • Zig • C# • Scala<br/>SQLite • PostgreSQL • MySQL/MariaDB • OR-Tools"]
         SDL_PHIL ~~~ MOD_GPU ~~~ SYS_PRAG
     end
 
@@ -67,13 +67,18 @@ Existe uma profunda simetria entre o **POSIX** e a **SDL (Simple DirectMedia Lay
     - **SDL Audio:** A camada unificada e consistente do SDL3.
     - **OpenGL**, **OpenCL** e **OpenAL**: Preservados e estudados como marcos clássicos formativos da computação gráfica, GPGPU e áudio 3D.
 
-### 3. Sistemas, Arquitetura & Filosofia Anti-Complexidade
+### 3. Sistemas, Arquitetura & Bancos de Dados: Do Monólito à Nuvem
 
-Frameworks são passageiros; filosofias arquiteturais e linguagens robustas permanecem:
+Frameworks e hypes são efêmeros; filosofias arquiteturais e dados confiáveis permanecem:
 
-- **SQLite (WAL Mode):** O padrão definitivo de banco embutido. Zero latência de rede, zero administração de daemon, integridade ACID estrita em arquivo único no VFS.
-- **PocketBase & Let's Encrypt:** Adoção pela filosofia de simplicidade e baixo atrito operacional. Go puro, SQLite WAL integrado e provisionamento automático de certificados SSL/TLS via **Let's Encrypt** nativo (sem a necessidade burocrática de proxies reversos complexos como Nginx ou Traefik em deploys autônomos). Se um serviço não exige escala planetária distribuída, não há sentido em pagar o custo cognitivo de 50 microsserviços e PostgreSQL. Cada contexto dita sua solução ideal.
-- **Infraestrutura Soberana:** Uso do **FreeBSD** como sistema principal em workstation/notebook e em servidores, explorando orquestração moderna com **Sylve** (virtualização bhyve e Jails sobre ZFS), complementado por nós de computação Linux e estações Windows (MSYS2).
+- **O Poder do Monólito Sem Preconceito (SQLite WAL):** Rejeição ao preconceito raso contra o SQLite. Quando operado em modo WAL (_Write-Ahead Logging_) com transações otimizadas, o SQLite é uma força titânica: entrega latência de nanossegundos em memória e VFS, integridade ACID estrita em arquivo único, zero dependência de daemon em segundo plano e zero sobrecarga de rede. Para serviços locais, sistemas autônomos e monólitos coesos, sua eficiência operacional é imbatível.
+- **A Tríade Relacional em Escala (PostgreSQL, MySQL / MariaDB):** Reconhecer a força do SQLite não significa ingenuidade arquitetural: nem tudo se resolve com banco embutido, nem localmente nem na nuvem. Quando o domínio exige concorrência massiva multi-writer, particionamento declarativo, isolamento distribuído, consultas geoespaciais avançadas (PostGIS) ou documentos JSONB indexados com estruturas GIN, o **PostgreSQL** é o padrão-ouro definitivo de engenharia relacional. Paralelamente, **MySQL** e **MariaDB** representam a espinha dorsal madura e hiper-testada da web, ideais para cargas de alta leitura e topologias de replicação tradicionais comprovadas em batalha. A regra de ouro é escolher a tecnologia pela densidade da carga e pelo contexto real, nunca por dogma.
+- **PocketBase & Let's Encrypt:** Um estudo de caso vivo dessa filosofia de simplicidade e baixo atrito operacional. Go puro, SQLite WAL integrado e provisionamento automático de certificados SSL/TLS via **Let's Encrypt** nativo (sem a necessidade burocrática de proxies reversos complexos como Nginx ou Traefik em deploys autônomos). Se um serviço não exige escala planetária distribuída, não há sentido em pagar o custo cognitivo de 50 microsserviços. Cada contexto dita sua solução ideal.
+- **Infraestrutura Soberana Multi-OS & Packet Filter (PF):**
+    - **FreeBSD:** Estação de trabalho primária e servidores bare-metal, explorando orquestração moderna com **Sylve** (Jails e virtualização bhyve sobre datasets OpenZFS) e segurança por capabilities com **Capsicum**.
+    - **OpenBSD:** A referência máxima em pureza de código, simplicidade arquitetural e segurança proativa por design, com isolamento estrito de processos via `pledge(2)` e `unveil(2)`.
+    - **Linux:** O motor universal de servidores em nuvem, contêineres e nós de processamento distribuído de alto desempenho.
+    - **PF (Packet Filter):** O padrão definitivo de firewall e engenharia de tráfego de rede defensiva nos BSDs, combinando regras declarativas limpas, NAT de alta velocidade e controle fino de estados no kernel.
 
 ### 4. Ciência, Algoritmos & Maratonas
 
@@ -139,6 +144,8 @@ Meu GitHub é estruturado em torno de **6 ecossistemas federados e soberanos**, 
 ### Sistemas Operacionais, Infra & Perto do Metal
 
 ![FreeBSD](https://img.shields.io/badge/FreeBSD-Primary_OS_%26_Capsicum-red?logo=freebsd&logoColor=white)
+![OpenBSD](https://img.shields.io/badge/OpenBSD-Pledge_%26_Unveil-yellow?logo=openbsd&logoColor=white)
+![Packet Filter](<https://img.shields.io/badge/Firewall-PF_(Packet_Filter)-blue?logo=freebsd&logoColor=white>)
 ![Sylve](https://img.shields.io/badge/Sylve-Jails_%26_bhyve-blue)
 ![OpenZFS](https://img.shields.io/badge/Storage-OpenZFS-black?logo=openzfs&logoColor=white)
 ![CheriBSD](https://img.shields.io/badge/CheriBSD-Hardware_Capabilities-darkred)
@@ -176,8 +183,11 @@ Meu GitHub é estruturado em torno de **6 ecossistemas federados e soberanos**, 
 ![OpenCL](https://img.shields.io/badge/Historical-OpenCL-blue?logo=opencl&logoColor=white)
 ![OpenAL](https://img.shields.io/badge/Historical-OpenAL-darkblue)
 
-### Filosofia Arquitetural & Motores de Decisão
+### Bancos de Dados Relacionais & Motores de Decisão
 
+![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-4169E1?logo=postgresql&logoColor=white)
+![MySQL](https://img.shields.io/badge/Database-MySQL-4479A1?logo=mysql&logoColor=white)
+![MariaDB](https://img.shields.io/badge/Database-MariaDB-003545?logo=mariadb&logoColor=white)
 ![SQLite](https://img.shields.io/badge/Database-SQLite-003B57?logo=sqlite&logoColor=white)
 ![PocketBase](https://img.shields.io/badge/Backend-PocketBase-B8DBE8?logo=pocketbase&logoColor=white)
 ![Let's Encrypt](https://img.shields.io/badge/Security-Let's_Encrypt-003A70?logo=letsencrypt&logoColor=white)
