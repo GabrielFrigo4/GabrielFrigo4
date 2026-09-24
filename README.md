@@ -20,20 +20,23 @@ flowchart TD
         UNIX["UNIX / POSIX: (FD + ID)<br/>VFS • Sockets • /dev • ioctl • kqueue"]
         SEC["Capacidades & Segurança<br/>Capsicum (FreeBSD) • CHERI / CheriBSD"]
         HW["Hardware & Silício<br/>Assembly • VHDL • FPGA"]
-        HIST["Padrões Clássicos & Históricos<br/>OpenGL • OpenCL • ALSA • OpenAL"]
+        HIST["Padrões Clássicos & Históricos<br/>OpenGL • OpenCL • OpenAL"]
+        UNIX ~~~ SEC ~~~ HW ~~~ HIST
     end
 
     subgraph S2 ["⚡ 2. Vanguarda Pragmática & Mínimo Denominador"]
         direction LR
-        SDL_PHIL["Filosofia SDL & POSIX<br/>Mínimo Denominador Comum da Indústria<br/>Estabilidade Absoluta sem Hype Efêmero"]
-        MOD_GPU["GPU & Áudio Modernos<br/>SDL_GPU • WebGPU • QRhi<br/>OSS (/dev/dsp) • SDL Audio • Dear ImGui"]
-        SYS_PRAG["Sistemas & Filosofia Anti-Inchaço<br/>C23 • C++23 • Rust • Go • Zig • C# • Scala<br/>PocketBase (SQLite WAL) • Google OR-Tools"]
+        SDL_PHIL["Filosofia SDL & POSIX<br/>Mínimo Denominador da Indústria<br/>Estabilidade sem Hype Efêmero"]
+        MOD_GPU["GPU & Áudio Nativo<br/>SDL_GPU • WebGPU • QRhi<br/>OSS (FreeBSD) • ALSA (Linux) • SDL Audio"]
+        SYS_PRAG["Sistemas & Anti-Inchaço<br/>C23 • C++23 • Rust • Go • Zig • C# • Scala<br/>SQLite (WAL) • PocketBase • Let's Encrypt • OR-Tools"]
+        SDL_PHIL ~~~ MOD_GPU ~~~ SYS_PRAG
     end
 
     subgraph S3 ["🎯 3. Ciência & Rigor Algorítmico"]
         direction LR
         OPT["Otimização Combinatória & Grafos<br/>Network Flows (UFABC / PIBIC) • DIMACS"]
         CP["Programação Competitiva<br/>ICPC (Final Nacional 2026) • Codeforces (Gerbunte)"]
+        OPT ~~~ CP
     end
 
     S1 --> S2 --> S3
@@ -43,7 +46,7 @@ flowchart TD
 
 Acredito que o domínio de um sistema operacional tipo Unix se resume à compreensão profunda de duas primitivas atemporais:
 
-- **Descritores de Arquivo (FD):** Sockets _são_ descritores de arquivo. Sockets, pipes, FIFOs, arquivos no VFS, dispositivos em `/dev`, multiplexação de eventos (`kqueue`/`epoll`) e canais de áudio nativos (**OSS** no FreeBSD via `/dev/dsp`) operam todos sob a mesma semântica pura de stream e descritor.
+- **Descritores de Arquivo (FD):** Sockets _são_ descritores de arquivo. Sockets, pipes, FIFOs, arquivos no VFS, dispositivos em `/dev`, multiplexação de eventos (`kqueue`/`epoll`) e o subsistema de áudio nativo operam sob a mesma semântica pura de stream e descritor.
 - **Identificadores & Credenciais (ID):** O modelo de processos e isolamento (UID, GID, EUID, PID, namespaces e controle de acesso).
 - **A Próxima Fronteira das Capacidades:** A evolução desse modelo em direção à segurança por privilégio mínimo:
     - _No nível de software:_ **Capsicum** (FreeBSD), eliminando o namespace global e operando estritamente sobre direitos delegados a FDs.
@@ -58,14 +61,19 @@ Existe uma profunda simetria entre o **POSIX** e a **SDL (Simple DirectMedia Lay
 - Ambos operam como o **mínimo denominador comum** universal que permite a plataformas, drivers, displays e placas de som conversarem exatamente a mesma língua.
 - Não são tecnologias defasadas: são **maduras, ultra-estáveis e impecáveis no que se propõem a fazer**.
 - **A GPU Moderna sem Fricção Bizantina:** Adoção de **SDL_GPU**, **WebGPU** e **QRhi** — modelam a arquitetura real das placas modernas (pipelines imutáveis, command buffers, bind groups e barreiras explícitas) sem a burocracia de milhares de linhas de código bare-metal, e longe de caixas-pretas alienantes (SFML, Raylib).
-- **Áudio Nativo:** **OSS** (Open Sound System nativo do FreeBSD) e **SDL Audio** como base sólida; **OpenGL**, **OpenCL**, **ALSA** e **OpenAL** preservados e estudados como marcos históricos formativos.
+- **Áudio Nativo no Sistema Operacional:**
+    - **OSS (Open Sound System):** O padrão nativo elegante e direto do FreeBSD (`/dev/dsp`, ioctl, unix stream puro, zero sound servers intermediários).
+    - **ALSA (Advanced Linux Sound Architecture):** A interface nativa de baixo nível do kernel Linux.
+    - **SDL Audio:** A camada unificada e consistente do SDL3.
+    - **OpenGL**, **OpenCL** e **OpenAL**: Preservados e estudados como marcos clássicos formativos da computação gráfica, GPGPU e áudio 3D.
 
-### 3. Sistemas, Ferramentas & Filosofia Anti-Complexidade
+### 3. Sistemas, Arquitetura & Filosofia Anti-Complexidade
 
 Frameworks são passageiros; filosofias arquiteturais e linguagens robustas permanecem:
 
-- **Pragmatismo de Contexto:** Adoção de ferramentas pela sua filosofia, como o **PocketBase** (Go + SQLite em modo WAL em um único binário autônomo) para projetos que demandam simplicidade operacional e zero inchaço. Se um serviço não exige escala planetária distribuída, não há sentido em pagar o custo cognitivo de 50 microsserviços e PostgreSQL. Cada contexto dita sua solução ideal.
-- **Infraestrutura Soberana:** Uso do **FreeBSD** como sistema principal em workstation/notebook e na nuvem, explorando orquestração moderna com **Sylve** (o gestor de virtualização bhyve e Jails sobre ZFS), complementado por nós de computação Linux e estações Windows (MSYS2).
+- **SQLite (WAL Mode):** O padrão definitivo de banco embutido. Zero latência de rede, zero administração de daemon, integridade ACID estrita em arquivo único no VFS.
+- **PocketBase & Let's Encrypt:** Adoção pela filosofia de simplicidade e baixo atrito operacional. Go puro, SQLite WAL integrado e provisionamento automático de certificados SSL/TLS via **Let's Encrypt** nativo (sem a necessidade burocrática de proxies reversos complexos como Nginx ou Traefik em deploys autônomos). Se um serviço não exige escala planetária distribuída, não há sentido em pagar o custo cognitivo de 50 microsserviços e PostgreSQL. Cada contexto dita sua solução ideal.
+- **Infraestrutura Soberana:** Uso do **FreeBSD** como sistema principal em workstation/notebook e em servidores, explorando orquestração moderna com **Sylve** (virtualização bhyve e Jails sobre ZFS), complementado por nós de computação Linux e estações Windows (MSYS2).
 
 ### 4. Ciência, Algoritmos & Maratonas
 
@@ -78,14 +86,14 @@ Frameworks são passageiros; filosofias arquiteturais e linguagens robustas perm
 
 Meu GitHub é estruturado em torno de **6 ecossistemas federados e soberanos**, cada um atuando como um hub orquestrador independente:
 
-| Repositório Hub                                                                                                                                                    | Foco & Responsabilidade                                          | Tecnologias Centrais             | Componentes Canônicos                                                                 |
-| :----------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------- | :------------------------------- | :------------------------------------------------------------------------------------ |
-| [![environment](https://img.shields.io/badge/environment-hub-purple?style=flat-square&logo=freebsd&logoColor=white)](https://github.com/GabrielFrigo4/environment) | Orquestrador de estações de trabalho e dotfiles soberanos        | POSIX Shell, Elisp, Lua, C       | `Setup`, `Shell`, `Vault`, `Profile`, `Emacs`, `Helix`, `NeoVim`, `Vim`               |
-| [![foundation](https://img.shields.io/badge/foundation-hub-blue?style=flat-square&logo=linux&logoColor=white)](https://github.com/GabrielFrigo4/foundation)        | Utilitários de sistema, elevação de privilégios e acervo técnico | C99, POSIX.1, LaTeX, Git         | `Sysutils` (`rtdo`/`rtgo`), `Library` (Acervo CS/Math), `Raw Text`                    |
-| [![research](https://img.shields.io/badge/research-hub-teal?style=flat-square&logo=databricks&logoColor=white)](https://github.com/GabrielFrigo4/research)         | Pesquisa acadêmica em Otimização Combinatória e Grafos           | C++23, LaTeX, DIMACS             | `Network Flow` (Fluxo Máximo e Custo Mínimo, Livro & Relatórios)                      |
-| [![training](https://img.shields.io/badge/training-hub-red?style=flat-square&logo=cplusplus&logoColor=white)](https://github.com/GabrielFrigo4/training)           | Hub de maratonas algorítmicas e programação competitiva          | C++23, Rust, Python, Bash        | `Algorithms` (Templates, CLI `cpt`, Handbook), `Marathon` (ICPC Nacional 2026)        |
-| [![personal](https://img.shields.io/badge/personal-hub-green?style=flat-square&logo=rust&logoColor=white)](https://github.com/GabrielFrigo4/personal)              | Engines de jogos, protocolos, servidores e laboratórios          | C/C++, Rust, SDL3, Lisp, Sockets | `Engines` (`RNG Engine`), `Systems` (`Posix Socket`, `BSD Lib`, `Orb Kernel`), `Labs` |
-| [![venture](https://img.shields.io/badge/venture-hub-orange?style=flat-square&logo=go&logoColor=white)](https://github.com/GabrielFrigo4/venture)                  | Soluções de mercado, logística operacional e produtos            | Go, Google OR-Tools, PocketBase  | `OptiLaser` (Motor de Otimização Logística VRPTW & Copiloto)                          |
+| Hub                                                               | Foco & Responsabilidade                                          | Tecnologias Centrais             | Componentes Canônicos                               |
+| :---------------------------------------------------------------- | :--------------------------------------------------------------- | :------------------------------- | :-------------------------------------------------- |
+| [**`environment`**](https://github.com/GabrielFrigo4/environment) | Orquestrador de estações de trabalho e dotfiles soberanos        | POSIX Shell, Elisp, Lua, C       | `Setup`, `Shell`, `Vault`, `Profile`, `Editores`    |
+| [**`foundation`**](https://github.com/GabrielFrigo4/foundation)   | Utilitários de sistema, elevação de privilégios e acervo técnico | C99, POSIX.1, LaTeX, Git         | `Sysutils` (`rtdo`/`rtgo`), `Library`, `Raw Text`   |
+| [**`research`**](https://github.com/GabrielFrigo4/research)       | Pesquisa acadêmica em Otimização Combinatória e Grafos           | C++23, LaTeX, DIMACS             | `Network Flow` (Fluxo Máximo e Custo Mínimo, Livro) |
+| [**`training`**](https://github.com/GabrielFrigo4/training)       | Hub de maratonas algorítmicas e programação competitiva          | C++23, Rust, Python, Bash        | `Algorithms` (Templates, CLI `cpt`), `Marathon`     |
+| [**`personal`**](https://github.com/GabrielFrigo4/personal)       | Engines de jogos, protocolos, servidores e laboratórios          | C/C++, Rust, SDL3, Lisp, Sockets | `Engines`, `Systems`, `Labs`, `Identity`, `OSS`     |
+| [**`venture`**](https://github.com/GabrielFrigo4/venture)         | Soluções de mercado, logística operacional e produtos            | Go, Google OR-Tools, PocketBase  | `OptiLaser` (Motor VRPTW & Copiloto)                |
 
 ---
 
@@ -121,17 +129,20 @@ Meu GitHub é estruturado em torno de **6 ecossistemas federados e soberanos**, 
 ![SDL_GPU](https://img.shields.io/badge/GPU-SDL__GPU-blue)
 ![WebGPU](https://img.shields.io/badge/GPU-WebGPU-orange?logo=w3c&logoColor=white)
 ![QRhi](https://img.shields.io/badge/GPU-QRhi-green?logo=qt&logoColor=white)
-![OSS](<https://img.shields.io/badge/Audio-OSS_(/dev/dsp)-purple>)
+![OSS](<https://img.shields.io/badge/Audio-OSS_(FreeBSD_/dev/dsp)-purple>)
+![ALSA](<https://img.shields.io/badge/Audio-ALSA_(Linux_Kernel)-blue>)
 ![ImGui](https://img.shields.io/badge/Tooling-Dear_ImGui-red)
 ![GLFW](https://img.shields.io/badge/Context-GLFW3-black)
 ![GLAD](https://img.shields.io/badge/Loader-GLAD_1_%26_2-gray)
 ![OpenGL](https://img.shields.io/badge/Historical-OpenGL-5586A4?logo=opengl&logoColor=white)
 ![OpenCL](https://img.shields.io/badge/Historical-OpenCL-blue?logo=opencl&logoColor=white)
-![ALSA](https://img.shields.io/badge/Historical-ALSA_%2F_OpenAL-darkblue)
+![OpenAL](https://img.shields.io/badge/Historical-OpenAL-darkblue)
 
 ### Filosofia Arquitetural & Motores de Decisão
 
-![PocketBase](<https://img.shields.io/badge/Architecture-PocketBase_(SQLite_WAL)-B8DBE8?logo=pocketbase&logoColor=white>)
+![SQLite](<https://img.shields.io/badge/Database-SQLite_(WAL_Mode)-003B57?logo=sqlite&logoColor=white>)
+![PocketBase](<https://img.shields.io/badge/Backend-PocketBase_(Go)-B8DBE8?logo=pocketbase&logoColor=white>)
+![Let's Encrypt](<https://img.shields.io/badge/Security-Let's_Encrypt_(Autocert)-003A70?logo=letsencrypt&logoColor=white>)
 ![OR-Tools](https://img.shields.io/badge/Solvers-Google_OR--Tools-4285F4?logo=google&logoColor=white)
 
 ---
