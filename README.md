@@ -171,15 +171,15 @@ Meu GitHub é estruturado em torno de **6 ecossistemas federados e soberanos**, 
 ![OpenBSD](https://img.shields.io/badge/OpenBSD-Security_%26_Purity-yellow?logo=openbsd&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-Servers_%26_Cloud-blue?logo=linux&logoColor=white)
 ![Windows](<https://img.shields.io/badge/Windows_(MSYS2)-Tooling_%26_Clink-purple?logo=gitforwindows&logoColor=white>)
-![CheriBSD](https://img.shields.io/badge/CheriBSD-Capabilities_Research-darkred)
+![CheriBSD](https://img.shields.io/badge/CheriBSD-Capabilities_Research-darkred?logo=freebsd&logoColor=white)
 
 ### Infraestrutura Soberana, Redes & Perto do Metal
 
 ![Packet Filter](<https://img.shields.io/badge/PF-Packet_Filter_(BSD)-1b4332?logo=openbsd&logoColor=white>)
-![Sylve](https://img.shields.io/badge/Sylve-bhyve_%26_Jails-blue)
+![Sylve](https://img.shields.io/badge/Sylve-bhyve_%26_Jails-blue?logo=freebsd&logoColor=white)
 ![OpenZFS](https://img.shields.io/badge/Storage-OpenZFS-black?logo=openzfs&logoColor=white)
-![POSIX](https://img.shields.io/badge/Standard-POSIX.1-black?logo=theopengroup&logoColor=white)
-![Hardware](https://img.shields.io/badge/Sil%C3%ADcio-Assembly_%2F_VHDL_%2F_FPGA-teal)
+![POSIX](https://img.shields.io/badge/Standard-POSIX.1-black?logo=ieee&logoColor=white)
+![Hardware](https://img.shields.io/badge/Sil%C3%ADcio-Assembly_%2F_VHDL_%2F_FPGA-teal?logo=riscv&logoColor=white)
 
 ### Linguagens de Programação
 
@@ -188,27 +188,27 @@ Meu GitHub é estruturado em torno de **6 ecossistemas federados e soberanos**, 
 ![Rust](https://img.shields.io/badge/Rust-Systems_%26_Async-DEA584?logo=rust&logoColor=white)
 ![Go](https://img.shields.io/badge/Go-Backend_%26_Concurrency-00ADD8?logo=go&logoColor=white)
 ![Zig](https://img.shields.io/badge/Zig-Toolchain_%26_Systems-F7A41D?logo=zig&logoColor=white)
-![C#](https://img.shields.io/badge/C%23-DotNet-512BD4?logo=csharp&logoColor=white)
+![C#](https://img.shields.io/badge/C%23-DotNet-512BD4?logo=dotnet&logoColor=white)
 ![Scala](https://img.shields.io/badge/Scala-Functional-DC322F?logo=scala&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-Scripting_%26_CP-3776AB?logo=python&logoColor=white)
 ![Lua](https://img.shields.io/badge/Lua-Embedded-2C2D72?logo=lua&logoColor=white)
-![Lisp](https://img.shields.io/badge/Lisp-Common_Lisp_%26_Elisp-purple?logo=lisp&logoColor=white)
+![Lisp](https://img.shields.io/badge/Lisp-Common_Lisp_%26_Elisp-purple?logo=commonlisp&logoColor=white)
 
 ### Computação Gráfica, GPU & Áudio
 
-![SDL3](https://img.shields.io/badge/Runtime-SDL3-informational?logo=libsdl&logoColor=white)
-![SDL_GPU](https://img.shields.io/badge/GPU-SDL__GPU-blue?logo=libsdl&logoColor=white)
-![SDL_Audio](https://img.shields.io/badge/Audio-SDL__Audio-blue?logo=libsdl&logoColor=white)
-![WebGPU](https://img.shields.io/badge/GPU-WebGPU-orange?logo=w3c&logoColor=white)
+![SDL3](https://img.shields.io/badge/Runtime-SDL3-informational?logo=c&logoColor=white)
+![SDL_GPU](https://img.shields.io/badge/GPU-SDL__GPU-blue?logo=vulkan&logoColor=white)
+![SDL_Audio](https://img.shields.io/badge/Audio-SDL__Audio-blue?logo=airplayaudio&logoColor=white)
+![WebGPU](https://img.shields.io/badge/GPU-WebGPU-orange?logo=webgpu&logoColor=white)
 ![QRhi](https://img.shields.io/badge/GPU-QRhi-green?logo=qt&logoColor=white)
 ![OSS](https://img.shields.io/badge/Audio-OSS-purple?logo=freebsd&logoColor=white)
 ![ALSA](https://img.shields.io/badge/Audio-ALSA-blue?logo=linux&logoColor=white)
-![ImGui](https://img.shields.io/badge/Tooling-Dear_ImGui-red)
-![GLFW](https://img.shields.io/badge/Context-GLFW3-black)
-![GLAD](https://img.shields.io/badge/Loader-GLAD_1_%26_2-gray)
+![ImGui](https://img.shields.io/badge/Tooling-Dear_ImGui-red?logo=cplusplus&logoColor=white)
+![GLFW](https://img.shields.io/badge/Context-GLFW3-black?logo=opengl&logoColor=white)
+![GLAD](https://img.shields.io/badge/Loader-GLAD_1_%26_2-gray?logo=opengl&logoColor=white)
 ![OpenGL](https://img.shields.io/badge/Historical-OpenGL-5586A4?logo=opengl&logoColor=white)
-![OpenCL](https://img.shields.io/badge/Historical-OpenCL-blue?logo=opencl&logoColor=white)
-![OpenAL](https://img.shields.io/badge/Historical-OpenAL-darkblue)
+![OpenCL](https://img.shields.io/badge/Historical-OpenCL-blue?logo=khronosgroup&logoColor=white)
+![OpenAL](https://img.shields.io/badge/Historical-OpenAL-darkblue?logo=airplayaudio&logoColor=white)
 
 ### Frontend Compilado & Ecossistema Web
 
@@ -231,7 +231,7 @@ Meu GitHub é estruturado em torno de **6 ecossistemas federados e soberanos**, 
 ![GNU Emacs](https://img.shields.io/badge/GNU_Emacs-Elpaca_%26_Eglot-7F5AB6?logo=gnuemacs&logoColor=white)
 ![Neovim](https://img.shields.io/badge/Neovim-Lua_%26_Treesitter-57A143?logo=neovim&logoColor=white)
 ![Vim](https://img.shields.io/badge/Vim-Modal_Classic-019733?logo=vim&logoColor=white)
-![VS Code](https://img.shields.io/badge/VS_Code-Code--OSS-007ACC?logo=visualstudiocode&logoColor=white)
+![VS Code](https://img.shields.io/badge/VS_Code-Code--OSS-007ACC?logo=vscodium&logoColor=white)
 
 ### Shells & Runtimes de Terminal
 
@@ -239,7 +239,7 @@ Meu GitHub é estruturado em torno de **6 ecossistemas federados e soberanos**, 
 ![Bash](https://img.shields.io/badge/Bash-Universal_POSIX-green?logo=gnubash&logoColor=white)
 ![FreeBSD sh](https://img.shields.io/badge/FreeBSD_sh-Pure_POSIX-red?logo=freebsd&logoColor=white)
 ![OpenBSD ksh](https://img.shields.io/badge/OpenBSD_ksh-Minimal_Korn-yellow?logo=openbsd&logoColor=white)
-![PowerShell](https://img.shields.io/badge/PowerShell-pwsh-5391FE?logo=powershell&logoColor=white)
+![PowerShell](https://img.shields.io/badge/PowerShell-pwsh-5391FE?logo=gitforwindows&logoColor=white)
 ![Nushell](https://img.shields.io/badge/Nushell-Structured_Data-4E9A06?logo=nushell&logoColor=white)
 ![CMD + Clink](https://img.shields.io/badge/CMD-Clink_%26_Lua-4A5568?logo=lua&logoColor=white)
 
@@ -247,8 +247,8 @@ Meu GitHub é estruturado em torno de **6 ecossistemas federados e soberanos**, 
 
 ![Antigravity](https://img.shields.io/badge/Google_Antigravity-CLI_%26_IDE_%26_2.0-4285F4?logo=google&logoColor=white)
 ![Antigravity SDK](https://img.shields.io/badge/Antigravity-Python_SDK-3776AB?logo=python&logoColor=white)
-![AI Skills](https://img.shields.io/badge/AI_Governance-Skills_%26_AGENTS.md-teal)
-![Socratic Inquiry](https://img.shields.io/badge/Epistemologia-M%C3%A9todo_Socr%C3%A1tico-purple)
+![AI Skills](https://img.shields.io/badge/AI_Governance-Skills_%26_AGENTS.md-teal?logo=agentskills&logoColor=white)
+![Socratic Inquiry](https://img.shields.io/badge/Epistemologia-M%C3%A9todo_Socr%C3%A1tico-purple?logo=academia&logoColor=white)
 
 ---
 
