@@ -28,7 +28,7 @@ flowchart TD
         direction LR
         SDL_PHIL["Filosofia SDL & POSIX<br/>Mínimo Denominador da Indústria<br/>Estabilidade sem Hype Efêmero"]
         MOD_GPU["GPU & Áudio Nativo<br/>SDL_GPU • WebGPU • QRhi<br/>OSS • ALSA • SDL_Audio"]
-        SYS_PRAG["Sistemas & Bancos de Dados<br/>C23 • C++23 • Rust • Go • Zig • C# • Scala<br/>SQLite • PostgreSQL • MySQL/MariaDB • OR-Tools"]
+        SYS_PRAG["Sistemas, Web & Dados<br/>C23 • C++23 • Rust • Go • Zig • Svelte<br/>SQLite • PostgreSQL • MySQL/MariaDB • PocketBase"]
         SDL_PHIL ~~~ MOD_GPU ~~~ SYS_PRAG
     end
 
@@ -95,6 +95,7 @@ Frameworks e hypes são efêmeros; filosofias arquiteturais e dados confiáveis 
 - **O Poder do Monólito Sem Preconceito (SQLite WAL):** Rejeição ao preconceito raso contra o SQLite. Quando operado em modo WAL (_Write-Ahead Logging_) com transações otimizadas, o SQLite é uma força titânica: entrega latência de nanossegundos em memória e VFS, integridade ACID estrita em arquivo único, zero dependência de daemon em segundo plano e zero sobrecarga de rede. Para serviços locais, sistemas autônomos e monólitos coesos, sua eficiência operacional é imbatível.
 - **A Tríade Relacional em Escala (PostgreSQL, MySQL / MariaDB):** Reconhecer a força do SQLite não significa ingenuidade arquitetural: nem tudo se resolve com banco embutido, nem localmente nem na nuvem. Quando o domínio exige concorrência massiva multi-writer, particionamento declarativo, isolamento distribuído, consultas geoespaciais avançadas (PostGIS) ou documentos JSONB indexados com estruturas GIN, o **PostgreSQL** é o padrão-ouro definitivo de engenharia relacional. Paralelamente, **MySQL** e **MariaDB** representam a espinha dorsal madura e hiper-testada da web, ideais para cargas de alta leitura e topologias de replicação tradicionais comprovadas em batalha. A regra de ouro é escolher a tecnologia pela densidade da carga e pelo contexto real, nunca por dogma.
 - **PocketBase & Let's Encrypt:** Um estudo de caso vivo dessa filosofia de simplicidade e baixo atrito operacional. Go puro, SQLite WAL integrado e provisionamento automático de certificados SSL/TLS via **Let's Encrypt** nativo (sem a necessidade burocrática de proxies reversos complexos como Nginx ou Traefik em deploys autônomos). Se um serviço não exige escala planetária distribuída, não há sentido em pagar o custo cognitivo de 50 microsserviços. Cada contexto dita sua solução ideal.
+- **Frontend Anti-Inchaço & O Compilador do Svelte ([svelte.dev](https://svelte.dev/)):** A mesma aversão ao inchaço que governa o terminal e o backend aplica-se à web. Rejeição frontal ao monstro de dependências do ecossistema tradicional e à sobrecarga artificial de Virtual DOMs em tempo de execução. O **Svelte** e o **SvelteKit** operam sob o paradigma do **compilador**: em vez de carregar um runtime mastodôntico no navegador, o Svelte compila componentes diretamente em JavaScript cirúrgico e reativo em tempo de build. É a composição ideal com backends enxutos em **Go** e **PocketBase** (cuja UI administrativa nativa é escrita em Svelte!) e com o **Sylve** do FreeBSD — garantindo bundles minúsculos, renderização instantânea e zero desperdício de recursos.
 - **Infraestrutura Soberana Multi-OS & Packet Filter (PF):**
     - **FreeBSD:** Estação de trabalho primária e servidores bare-metal, explorando orquestração moderna com **Sylve** (Jails e virtualização bhyve sobre datasets OpenZFS) e segurança por capabilities com **Capsicum**.
     - **OpenBSD:** A referência máxima em pureza de código, simplicidade arquitetural e segurança proativa por design, com isolamento estrito de processos via `pledge(2)` e `unveil(2)`.
@@ -142,6 +143,8 @@ O uso de inteligência artificial generativa em engenharia de software não deve
 - **Engenharia de Contexto & IA como Tutora:** A IA opera como pair programmer, tutora epistemológica e arquiteta técnica orientada por contratos declarativos estritos: **Portable AI Skills (`SKILL.md`)** para conhecimento procedural especializado, **`AGENTS.md`** para diretrizes operacionais de cada repositório e **`PRINCIPLES.md`** para axiomas inegociáveis de design de software.
 - **O Método Socrático com IA (Epistemologia Rigorosa):**
     > **Perguntar sempre, a toda hora e sobre tudo.** Jamais aceitar as afirmações de um modelo de linguagem como verdades consolidadas até que sejam submetidas a validações empíricas, testes adversariais e comprovação formal. No desenvolvimento de software perto do metal, **99% de certeza não basta** — o 1% restante é precisamente onde residem vazamentos de memória, undefined behaviors e falhas silenciosas de concorrência. A IA deve ser usada como uma contraparte socrática dialética: desafiando hipóteses, questionando decisões de arquitetura e elevando o rigor técnico a 100%.
+- **A Primazia do Compilador Determinístico (Garantias Matemáticas > Alucinações de IA):**
+    > Prefiro infinitamente o rigor inabalável de um **compilador determinístico** me auxiliando do que depender cegamente de qualquer inteligência artificial. É exatamente por isso que amo linguagens com sistemas de tipos fortes e compiladores intransigentes como **Rust, Zig, C, C++ e Go** (e o próprio **Svelte** no frontend): um compilador estrito não tem "humores", não alucina e não aceita suposições — ele impõe tipos, tempo de vida de memória, integridade estrutural e garantias matemáticas sólidas em tempo de compilação. Se o compilador validou o código e gerou o binário, temos garantias axiomáticas que nenhuma heurística probabilística jamais conseguirá entregar. A IA é uma excelente assistente socrática e parceira de ideação, mas o compilador determinístico e a verificação formal são os árbitros supremos da verdade técnica.
 
 ---
 
@@ -162,18 +165,21 @@ Meu GitHub é estruturado em torno de **6 ecossistemas federados e soberanos**, 
 
 ## 🛠️ Stack Tecnológico & Domínios
 
-### Sistemas Operacionais, Infra & Perto do Metal
+### Sistemas Operacionais & Ambientes de Host
 
-![FreeBSD](https://img.shields.io/badge/FreeBSD-Primary_OS_%26_Capsicum-red?logo=freebsd&logoColor=white)
-![OpenBSD](https://img.shields.io/badge/OpenBSD-Pledge_%26_Unveil-yellow?logo=openbsd&logoColor=white)
-![Packet Filter](<https://img.shields.io/badge/Firewall-PF_(Packet_Filter)-blue?logo=freebsd&logoColor=white>)
-![Sylve](https://img.shields.io/badge/Sylve-Jails_%26_bhyve-blue)
+![FreeBSD](https://img.shields.io/badge/FreeBSD-Primary_Workstation-red?logo=freebsd&logoColor=white)
+![OpenBSD](https://img.shields.io/badge/OpenBSD-Security_%26_Purity-yellow?logo=openbsd&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-Servers_%26_Cloud-blue?logo=linux&logoColor=white)
+![Windows](<https://img.shields.io/badge/Windows_(MSYS2)-Tooling_%26_Clink-purple?logo=gitforwindows&logoColor=white>)
+![CheriBSD](https://img.shields.io/badge/CheriBSD-Capabilities_Research-darkred)
+
+### Infraestrutura Soberana, Redes & Perto do Metal
+
+![Packet Filter](<https://img.shields.io/badge/PF-Packet_Filter_(BSD)-1b4332?logo=openbsd&logoColor=white>)
+![Sylve](https://img.shields.io/badge/Sylve-bhyve_%26_Jails-blue)
 ![OpenZFS](https://img.shields.io/badge/Storage-OpenZFS-black?logo=openzfs&logoColor=white)
-![CheriBSD](https://img.shields.io/badge/CheriBSD-Hardware_Capabilities-darkred)
-![POSIX](https://img.shields.io/badge/Standards-POSIX.1-black?logo=linux&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-Servers_%26_Kernel-blue?logo=linux&logoColor=white)
-![Windows](https://img.shields.io/badge/Windows-MSYS2-purple?logo=gitforwindows&logoColor=white)
-![Hardware](https://img.shields.io/badge/Hardware-Assembly_%2F_VHDL_%2F_FPGA-teal)
+![POSIX](https://img.shields.io/badge/Standard-POSIX.1-black?logo=theopengroup&logoColor=white)
+![Hardware](https://img.shields.io/badge/Sil%C3%ADcio-Assembly_%2F_VHDL_%2F_FPGA-teal)
 
 ### Linguagens de Programação
 
@@ -204,14 +210,19 @@ Meu GitHub é estruturado em torno de **6 ecossistemas federados e soberanos**, 
 ![OpenCL](https://img.shields.io/badge/Historical-OpenCL-blue?logo=opencl&logoColor=white)
 ![OpenAL](https://img.shields.io/badge/Historical-OpenAL-darkblue)
 
+### Frontend Compilado & Ecossistema Web
+
+[![Svelte](https://img.shields.io/badge/Frontend-Svelte-FF3E00?logo=svelte&logoColor=white)](https://svelte.dev)
+[![SvelteKit](https://img.shields.io/badge/Framework-SvelteKit-FF3E00?logo=svelte&logoColor=white)](https://svelte.dev)
+![PocketBase](https://img.shields.io/badge/Backend-PocketBase-B8DBE8?logo=pocketbase&logoColor=white)
+![Let's Encrypt](https://img.shields.io/badge/Security-Let's_Encrypt-003A70?logo=letsencrypt&logoColor=white)
+
 ### Bancos de Dados Relacionais & Motores de Decisão
 
 ![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-4169E1?logo=postgresql&logoColor=white)
 ![MySQL](https://img.shields.io/badge/Database-MySQL-4479A1?logo=mysql&logoColor=white)
 ![MariaDB](https://img.shields.io/badge/Database-MariaDB-003545?logo=mariadb&logoColor=white)
 ![SQLite](https://img.shields.io/badge/Database-SQLite-003B57?logo=sqlite&logoColor=white)
-![PocketBase](https://img.shields.io/badge/Backend-PocketBase-B8DBE8?logo=pocketbase&logoColor=white)
-![Let's Encrypt](https://img.shields.io/badge/Security-Let's_Encrypt-003A70?logo=letsencrypt&logoColor=white)
 ![OR-Tools](https://img.shields.io/badge/Solvers-Google_OR--Tools-4285F4?logo=google&logoColor=white)
 
 ### Editores & Ambientes de Desenvolvimento
@@ -237,7 +248,7 @@ Meu GitHub é estruturado em torno de **6 ecossistemas federados e soberanos**, 
 ![Antigravity](https://img.shields.io/badge/Google_Antigravity-CLI_%26_IDE_%26_2.0-4285F4?logo=google&logoColor=white)
 ![Antigravity SDK](https://img.shields.io/badge/Antigravity-Python_SDK-3776AB?logo=python&logoColor=white)
 ![AI Skills](https://img.shields.io/badge/AI_Governance-Skills_%26_AGENTS.md-teal)
-![Socratic Inquiry](https://img.shields.io/badge/Epistemologia-Método_Socrático-purple)
+![Socratic Inquiry](https://img.shields.io/badge/Epistemologia-M%C3%A9todo_Socr%C3%A1tico-purple)
 
 ---
 
