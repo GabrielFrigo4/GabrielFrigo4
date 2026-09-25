@@ -27,7 +27,7 @@ flowchart TD
     subgraph S2 ["⚡ 2. Vanguarda Pragmática & Mínimo Denominador"]
         direction LR
         SDL_PHIL["Filosofia SDL & POSIX<br/>Mínimo Denominador da Indústria<br/>Estabilidade sem Hype Efêmero"]
-        MOD_GPU["GPU & Áudio Nativo<br/>SDL_GPU • WebGPU • QRhi<br/>OSS • ALSA • SDL_Audio"]
+        MOD_GPU["GPU & Áudio<br/>SDL_GPU • WebGPU • QRhi<br/>OSS • ALSA • SDL_Audio"]
         SYS_PRAG["Sistemas, Web & Dados<br/>C23 • C++23 • Rust • Go • Zig • Svelte<br/>SQLite • PostgreSQL • MySQL/MariaDB • PocketBase"]
         SDL_PHIL ~~~ MOD_GPU ~~~ SYS_PRAG
     end
