@@ -3,19 +3,39 @@
 > **Estudante de Ciência da Computação e BC&T na UFABC**<br />
 > _Baixa Abstração, Engenharia de Sistemas, Fundamentos de UNIX, Computação Gráfica & Otimização Combinatória_
 
-Troquei as competições de matemática e astronomia (onde conquistei algumas medalhas) para me dedicar ao que realmente me move: resolver problemas de alta densidade algorítmica, codar perto do metal e entender **como as coisas realmente funcionam por baixo dos panos** — do silício ao userspace.
+Seja muito bem-vindo ao meu cantinho no GitHub! Troquei as competições pesadas de matemática e astronomia (onde conquistei algumas medalhas e muita disciplina mental) para me dedicar de corpo e alma ao que realmente faz meu olho brilhar: **entender a computação de ponta a ponta, do silício aos bits que cruzam o kernel até a tela.**
+
+Eu vejo este perfil como a **BIOS do meu ecossistema**: o lugar onde mostro não apenas o código que escrevo, mas o que me apaixona, como penso arquitetura e a diversão pura de construir coisas rápidas, resilientes e elegantes perto do metal.
 
 ---
 
-## 🧠 Filosofia de Engenharia: A Tríade Canônica
+## 🏛️ Meu Laboratório: O Sexteto de Engenharia (Os 6 Hubs)
 
-Rejeito os dois extremos rasos do desenvolvimento de software: **a alienação das caixas-pretas de altíssimo nível** (que escondem a mecânica do hardware e do kernel) e **a burocracia bizantina desnecessária** (como escrever 1.500 linhas de boilerplate manual em Vulkan ou DirectX 12 direto só para desenhar uma primitiva na tela).
+Para não transformar meu GitHub em uma gaveta bagunçada de códigos soltos, estruturei todo o meu trabalho em torno de **6 ecossistemas federados e soberanos**. Cada um deles resolve uma frente do meu universo de desenvolvimento:
 
-Busco o **equilíbrio de ouro**: fundamentos sólidos e perenes combinados com uma vanguarda pragmática, sem inchaço operacional.
+| Hub                                                               | O que acontece por lá?                                                 | Tecnologias Centrais             | Componentes Canônicos                               |
+| :---------------------------------------------------------------- | :--------------------------------------------------------------------- | :------------------------------- | :-------------------------------------------------- |
+| [**`environment`**](https://github.com/GabrielFrigo4/environment) | Minha estação de trabalho portátil, dotfiles e automações de SO        | POSIX Shell, Elisp, Lua, C       | `Setup`, `Shell`, `Vault`, `Profile`, `Editores`    |
+| [**`foundation`**](https://github.com/GabrielFrigo4/foundation)   | Utilitários de sistema, ferramentas de privilégio e acervo canônico    | C99, POSIX.1, LaTeX, Git         | `Sysutils` (`rtdo`/`rtgo`), `Library`, `Raw Text`   |
+| [**`research`**](https://github.com/GabrielFrigo4/research)       | Pesquisa acadêmica em Otimização Combinatória e Grafos na UFABC        | C++23, LaTeX, DIMACS             | `Network Flow` (Fluxo Máximo e Custo Mínimo, Livro) |
+| [**`training`**](https://github.com/GabrielFrigo4/training)       | Maratonas algorítmicas, desafios extremos e treino competitivo         | C++23, Rust, Python, Bash        | `Algorithms` (Templates, CLI `cpt`), `Marathon`     |
+| [**`personal`**](https://github.com/GabrielFrigo4/personal)       | Engines do zero, computação gráfica, servidores de rede e experimentos | C/C++, Rust, SDL3, Lisp, Sockets | `Engines`, `Systems`, `Labs`, `Identity`, `OSS`     |
+| [**`venture`**](https://github.com/GabrielFrigo4/venture)         | Soluções de mercado, logística operacional e produtos completos        | Go, Google OR-Tools, PocketBase  | `OptiLaser` (Motor VRPTW & Copiloto)                |
+
+---
+
+## 🧠 Como eu penso Engenharia: A Tríade Canônica
+
+Fujo deliberadamente de dois extremos que considero armadilhas no desenvolvimento:
+
+1. **A alienação das caixas-pretas de altíssimo nível:** Aquela sensação desconfortável de rodar 50 camadas de abstração sem fazer a menor ideia de quanta memória está sendo queimada, de quantos ponteiros estão vazando ou do que o sistema operacional está sofrendo por baixo.
+2. **A burocracia bizantina do masoquismo técnico:** Passar três semanas escrevendo 1.500 linhas de boilerplate manual em Vulkan ou DirectX 12 cru só para conseguir a façanha de desenhar um único triângulo na tela.
+
+O que eu busco todos os dias é o **equilíbrio de ouro**: a força inabalável dos fundamentos clássicos aliada à vanguarda pragmática da indústria moderna.
 
 ```mermaid
 flowchart TD
-    subgraph S1 ["🏛️ 1. Fundamentos, Sistemas & Perto do Metal"]
+    subgraph S1 ["🏛️ 1. Fundamentos & Perto do Metal"]
         direction LR
         UNIX["UNIX / POSIX / BSD<br/>FreeBSD • OpenBSD • Linux • PF<br/>VFS • Sockets • /dev • ioctl • kqueue"]
         SEC["Capacidades & Segurança<br/>Capsicum • Pledge • Unveil • CHERI"]
@@ -24,7 +44,7 @@ flowchart TD
         UNIX ~~~ SEC ~~~ HW ~~~ HIST
     end
 
-    subgraph S2 ["⚡ 2. Vanguarda Pragmática & Mínimo Denominador"]
+    subgraph S2 ["⚡ 2. Vanguarda Pragmática & Ergonomia"]
         direction LR
         SDL_PHIL["Filosofia SDL & POSIX<br/>Mínimo Denominador da Indústria<br/>Estabilidade sem Hype Efêmero"]
         MOD_GPU["GPU & Áudio<br/>SDL_GPU • WebGPU • QRhi<br/>OSS • ALSA • SDL_Audio"]
@@ -42,138 +62,99 @@ flowchart TD
     S1 --> S2 --> S3
 ```
 
-### 1. O Núcleo UNIX: (FD + ID), o Suco do Low-Level & Capabilities
+---
 
-Se você olhar por baixo do capô de qualquer sistema Unix-like (FreeBSD, Linux, OpenBSD, macOS), a infraestrutura do sistema operacional se resume a duas primitivas fundamentais:
+## 💡 O que realmente faz meu olho brilhar
 
-- **File Descriptors (FD):** Onde e como você atua no stream do sistema. Sockets _são_ descritores de arquivo. Pipes, FIFOs, arquivos no VFS, dispositivos em `/dev`, multiplexação de eventos (`kqueue`/`epoll`) e o próprio subsistema de áudio. Quando o sistema é modelado com elegância, **tudo pode e deve ser um descritor de arquivo**.
-    - _O Teste do Áudio:_ No **OSS (Open Sound System)** do FreeBSD, você simplesmente roda:
+### 1. A Poesia do UNIX: Quando tudo é um Descritor e uma Credencial (FD + ID)
+
+Sabe aquele estalo mental inesquecível em que a arquitetura inteira de computação se ilumina na sua frente? Para mim, foi perceber que quase toda a mágica dos sistemas Unix-like (FreeBSD, Linux, OpenBSD) se apoia em apenas duas primitivas absurdamente simples e geniais:
+
+- **File Descriptors (FD):** Onde e como você conversa com o fluxo de dados. Sockets de rede? São FDs. Arquivos no disco, pipes entre processos, nós de dispositivos em `/dev`, multiplexação de eventos em alta escala com `kqueue`/`epoll` e o próprio subsistema de som. Quando o sistema operacional é bem desenhado, **tudo pode e deve ser tratado como um descritor de arquivo**.
+    - _O momento em que eu pirei com isso:_ No **OSS (Open Sound System)** do FreeBSD, se você quiser testar o microfone saindo nas caixas, você simplesmente roda no terminal:
         ```sh
         cat /dev/dsp > /dev/dsp
         ```
-        e escuta instantaneamente a sua voz no microfone saindo nas caixas de som, porque áudio é um stream puro no VFS. Enquanto isso, no Linux, você encara a bomba do ALSA com 1001 APIs monstruosas, camadas complexas e intermediários desnecessários.
-- **Identifiers & Credenciais (ID):** Quem é o sujeito que atua no sistema. UID, GID, EUID, PID e as fronteiras de autorização de processos.
+        E pronto! Sua voz sai nos alto-falantes em tempo real. Sem servidor de áudio mastodôntico consumindo CPU, sem dezenas de camadas intermediárias. É áudio tratado como um stream puro de bytes no VFS. Isso para mim é o ápice da elegância computacional!
+- **Identifiers & Credenciais (ID):** Quem é o sujeito executando a ação (UID, GID, EUID, PID) e onde ficam as fronteiras de autorização.
 
-#### As Técnicas que Nascem da União de FD e ID:
+Quando você junta **FD** e **ID**, nasce a verdadeira engenharia defensiva que eu amo praticar:
 
-- **Privilege Separation (PrivSep):** A técnica magistral consagrada pelo OpenBSD (e projetos como o OpenSSH). O processo mestre faz `fork()`, passa descritores pré-autorizados via sockets UNIX (`sendmsg`/`SCM_RIGHTS`), e o processo filho derruba privilégios trocando de ID e trancando o próprio espaço de execução com `pledge(2)` e `unveil(2)`. Segurança real nasce do isolamento estrito de FDs e IDs.
-- **Containers & Sandboxes:** Na prática, nada além de isolamento de IDs (UID/GID namespaces) e confinamento defensivo de FDs e diretórios no VFS.
-- **CUSE (Character Devices in Userspace) & Drivers:** A capacidade de expor drivers e objetos de kernel diretamente como nós de `/dev` operáveis via chamadas clássicas (`read`, `write`, `ioctl`).
-
-#### E Fora de ID e FD? O Suco do Low-Level Bruto:
-
-Se ID e FD cuidam da infraestrutura do sistema operacional, o que resta fora deles é o suco puro do bare-metal:
-
-- **Instruções e Registradores da CPU:** Assembly puro, microarquitetura, pipelines de execução e controle de registradores.
-- **Hierarquia de Memória:** Memória física, memória virtual (VMM), páginas, TLB e comportamento de caches L1/L2/L3.
-- **O Kernel Interno:** O escalonador de processos (_scheduler_), tratamento de interrupções de hardware e context switches.
-
-#### A Próxima Fronteira: Unificando ID e FD em Capabilities
-
-O próximo salto da engenharia é a unificação do FD e do ID em uma única abstração: **Capabilities**. Um descritor que já carrega consigo, inseparavelmente, os direitos e o escopo de autorização:
-
-- _No nível de software:_ **Capsicum** (FreeBSD), eliminando o namespace global e operando exclusivamente sobre direitos delegados em tempo de execução.
-- _No nível do silício:_ **CHERI** e **CheriBSD**, estendendo a arquitetura de registradores e instruções da CPU para impor segurança de memória com integridade espacial e temporal em nível de hardware.
-
-### 2. A Filosofia SDL & POSIX: O Mínimo Denominador Comum
-
-Existe uma profunda simetria entre o **POSIX** e a **SDL (Simple DirectMedia Layer)**:
-
-- Ambos se recusam a perseguir hypes passageiros ou reinventar a roda a cada ciclo da moda.
-- Ambos operam como o **mínimo denominador comum** universal que permite a plataformas, drivers, displays e placas de som conversarem exatamente a mesma língua.
-- Não são tecnologias defasadas: são **maduras, ultra-estáveis e impecáveis no que se propõem a fazer**.
-- **A GPU Moderna sem Fricção Bizantina:** Adoção de **SDL_GPU**, **WebGPU** e **QRhi** — modelam a arquitetura real das placas modernas (pipelines imutáveis, command buffers, bind groups e barreiras explícitas) sem a loucura de 1.500 linhas de boilerplate bare-metal em Vulkan ou DirectX 12 só pra desenhar um triângulo, e longe de caixas-pretas alienantes (SFML, Raylib).
-- **Computação Paralela Massiva (GPGPU):** Domínio de **NVIDIA CUDA** para processamento vetorial de alto desempenho em GPU, escalonamento massivo em warps e memória compartilhada.
-- **Áudio Nativo & Padrões Gráficos:**
-    - **OSS (Open Sound System):** A elegância do `/dev/dsp` e ioctl direto no FreeBSD, sem servidores de som intermediários consumindo CPU e adicionando latência.
-    - **ALSA & SDL Audio:** Suporte a baixo nível no Linux e a camada unificada e consistente do SDL3.
-    - **OpenGL**, **OpenCL** e **OpenAL**: Preservados e estudados como marcos clássicos formativos e legados históricos da computação gráfica, GPGPU e áudio 3D.
-
-### 3. Sistemas, Arquitetura & Bancos de Dados: Do Monólito à Nuvem
-
-Frameworks e hypes são efêmeros; filosofias arquiteturais e dados confiáveis permanecem:
-
-- **O Poder do Monólito Sem Preconceito (SQLite WAL):** Rejeição ao preconceito raso contra o SQLite. Quando operado em modo WAL (_Write-Ahead Logging_) com transações otimizadas, o SQLite é uma força titânica: entrega latência de nanossegundos em memória e VFS, integridade ACID estrita em arquivo único, zero dependência de daemon em segundo plano e zero sobrecarga de rede. Para serviços locais, sistemas autônomos e monólitos coesos, sua eficiência operacional é imbatível.
-- **A Tríade Relacional em Escala (PostgreSQL, MySQL / MariaDB):** Reconhecer a força do SQLite não significa ingenuidade arquitetural: nem tudo se resolve com banco embutido, nem localmente nem na nuvem. Quando o domínio exige concorrência massiva multi-writer, particionamento declarativo, isolamento distribuído, consultas geoespaciais avançadas (PostGIS) ou documentos JSONB indexados com estruturas GIN, o **PostgreSQL** é o padrão-ouro definitivo de engenharia relacional. Paralelamente, **MySQL** e **MariaDB** representam a espinha dorsal madura e hiper-testada da web, ideais para cargas de alta leitura e topologias de replicação tradicionais comprovadas em batalha. A regra de ouro é escolher a tecnologia pela densidade da carga e pelo contexto real, nunca por dogma.
-- **PocketBase & Let's Encrypt:** Um estudo de caso vivo dessa filosofia de simplicidade e baixo atrito operacional. Go puro, SQLite WAL integrado e provisionamento automático de certificados SSL/TLS via **Let's Encrypt** nativo (sem a necessidade burocrática de proxies reversos complexos como Nginx ou Traefik em deploys autônomos). Se um serviço não exige escala planetária distribuída, não há sentido em pagar o custo cognitivo de 50 microsserviços. Cada contexto dita sua solução ideal.
-- **Frontend Anti-Inchaço & O Compilador do Svelte ([svelte.dev](https://svelte.dev/)):** A mesma aversão ao inchaço que governa o terminal e o backend aplica-se à web. Rejeição frontal ao monstro de dependências do ecossistema tradicional e à sobrecarga artificial de Virtual DOMs em tempo de execução. O **Svelte** e o **SvelteKit** operam sob o paradigma do **compilador**: em vez de carregar um runtime mastodôntico no navegador, o Svelte compila componentes diretamente em JavaScript cirúrgico e reativo em tempo de build. É a composição ideal com backends enxutos em **Go** e **PocketBase** (cuja UI administrativa nativa é escrita em Svelte!) e com o **Sylve** do FreeBSD — garantindo bundles minúsculos, renderização instantânea e zero desperdício de recursos.
-- **Infraestrutura Soberana Multi-OS & Packet Filter (PF):**
-    - **FreeBSD:** Estação de trabalho primária e servidores bare-metal, explorando orquestração moderna com **Sylve** (Jails e virtualização bhyve sobre datasets OpenZFS) e segurança por capabilities com **Capsicum**.
-    - **OpenBSD:** A referência máxima em pureza de código, simplicidade arquitetural e segurança proativa por design, com isolamento estrito de processos via `pledge(2)` e `unveil(2)`.
-    - **Linux:** O motor universal de servidores em nuvem, contêineres e nós de processamento distribuído de alto desempenho.
-    - **illumos (OpenIndiana / SmartOS):** A linhagem clássica e refinada do UNIX Solaris/SunOS, oferecendo **Solaris Zones** nativas, isolamento de rede virtualizado via **Crossbow** e rastreabilidade dinâmica cirúrgica de kernel com **DTrace**.
-    - **PF (Packet Filter):** O padrão definitivo de firewall e engenharia de tráfego de rede defensiva nos BSDs, combinando regras declarativas limpas, NAT de alta velocidade e controle fino de estados no kernel.
-- **Conteinerização & Sandboxing Soberano:**
-    - **Podman (Linux & FreeBSD):** O padrão moderno para contêineres OCI sem daemons e rootless no Linux, e com execução nativa OCI no FreeBSD via `runj` (rodando imagens do Docker Hub direto em Jails)!
-    - **FreeBSD Jails & BastilleBSD:** O modelo pioneiro de particionamento de sistema operacional, orquestrado de forma reprodutível e declarativa com **BastilleBSD** sobre snapshots instantâneos do OpenZFS.
-    - **Incus & LXC:** Contêineres de sistema completos (System Containers) de alta densidade no Linux sem a sobrecarga de VMs pesadas.
-    - **Solaris Zones (illumos):** Particionamento nativo de hardware herdado do SunOS/Solaris, incluindo zonas `lx-brand` para binários Linux diretos no kernel illumos.
-    - **Docker / OCI:** O formato de distribuição universal adotado com parcimônia, privilegiando runtimes descentralizados.
-
-### 4. Ciência, Algoritmos & Maratonas
-
-- **Iniciação Científica (UFABC / PIBIC):** Pesquisa focada em Problemas de Fluxos em Redes (_Network Flows_: Fluxo Máximo e Fluxo de Custo Mínimo), implementações de alta fidelidade em C++23 e validação com instâncias canônicas da DIMACS.
-- **Programação Competitiva:** Membro da equipe GRUB da UFABC. Treinamento intensivo focado na **Final Nacional do ICPC 2026**, Codeforces, Maratona Paulista e OBI.
+- **Privilege Separation (PrivSep):** O padrão magistral do OpenBSD (consagrado no OpenSSH). O processo mestre faz `fork()`, passa apenas os descritores estritamente necessários via sockets UNIX (`sendmsg`/`SCM_RIGHTS`) e o processo filho derruba privilégios trocando de ID e trancando a própria porta com `pledge(2)` e `unveil(2)`. Se o filho for comprometido, ele simplesmente não tem para onde correr.
+- **A Próxima Fronteira (Capabilities):** Unificar o descritor e a autorização em um único objeto inseparável — seja via software com o **Capsicum** no FreeBSD, seja a nível de registradores de hardware e silício com a arquitetura **CHERI / CheriBSD**.
 
 ---
 
-## ⚡ Ferramental Hacker: Editores Modais, Shells & IA Socrática
+### 2. A Simetria entre POSIX e SDL: Criando do Zero sem Reinventar a Roda
 
-### Editores Modais & Ergonomia de Teclado
+Existe uma harmonia linda entre o padrão **POSIX** e a biblioteca **SDL (Simple DirectMedia Layer)**:
 
-Navegação orientada a texto puro, latência imperceptível e controle estrito das mãos no teclado sem a dependência dispersiva do mouse:
-
-- **Helix:** O editor modal moderno por excelência. Seleção-ação invertida (`selection -> action`), tree-sitter nativo out-of-the-box e LSP integrado sem atrito de configuração.
-- **Vim & NeoVim:** O padrão atemporal e sua evolução moderna extensível com Lua, explorando todo o poder de syntax trees e plugins assíncronos.
-- **GNU Emacs:** Mais do que um editor, uma plataforma computacional Lisp completa. Configurado de ponta a ponta com o gerenciador de pacotes transacional **Elpaca**, LSP nativo via **Eglot**, **Org Mode** para gestão de tarefas e conhecimento, e ciclo de vida conectado via **daemon/socket Unix** nativo.
-- **Code-OSS / VS Code:** Preservado para depuração visual assistida, inspeções gráficas e ecossistemas específicos onde a interface visual acelera fluxos pontuais.
-
-### Shells & Runtimes de Terminal: Do POSIX ao Windows
-
-Uma estação de trabalho soberana e resiliente exige consistência entre sistemas operacionais, com uma taxonomia clara de execução e ergonomia:
-
-- **Ambientes UNIX / POSIX (`Environment/Shell`):**
-    - **Zsh:** Shell interativo primário com 100% de suporte, focado em máxima produtividade, autocompletion preditivo e ergonomia diária de prompt.
-    - **Bash:** O cavalo de batalha universal com 100% de suporte para portabilidade estrita em contêineres, servidores headless e automação CI/CD.
-    - **FreeBSD `/bin/sh`:** O shell nativo do FreeBSD — ultra-rápido, estritamente POSIX, sem inchaço e sem dependências externas.
-    - **OpenBSD `/bin/ksh`:** KornShell canônico focado em minimalismo, segurança inabalável e conformidade de sistema.
-    - _Rejeição Deliberada:_ Descarte de shells que quebram a semântica POSIX padrão (como Dash em modo interativo ou Fish), garantindo scripts reproduzíveis em qualquer máquina.
-- **Ambientes Windows:**
-    - **PowerShell (`pwsh`):** Para automação nativa robusta orientada a objetos no subsistema Windows.
-    - **Nushell (`nu`):** Paradigma moderno de pipelines com tabelas de dados estruturados e tipagem estrita no terminal.
-    - **Command Prompt (`cmd.exe`) com Clink:** O prompt nativo do Windows turbinado com **Clink**, que injeta dinamicamente a biblioteca **GNU Readline** e scripting **Lua** (`profile.lua`), trazendo auto-sugestões, histórico persistente inteligente e keybindings Vi diretamente para o terminal legado.
-
-### Inteligência Artificial Agêntica & O Método Socrático
-
-O uso de inteligência artificial generativa em engenharia de software não deve ser um atalho preguiçoso ("vibe coding"), mas sim uma ferramenta de **amplificação cognitiva de altíssimo rigor**:
-
-- **A Plataforma Google Antigravity:** Adoção e domínio profundo de todo o ecossistema Antigravity — **Antigravity CLI (`agy`)**, **Antigravity IDE**, **Antigravity 2.0** e o **Python SDK**, operando com workflows agênticos autônomos e controle total de ferramentas de sistema.
-- **Engenharia de Contexto & IA como Tutora:** A IA opera como pair programmer, tutora epistemológica e arquiteta técnica orientada por contratos declarativos estritos: **Portable AI Skills (`SKILL.md`)** para conhecimento procedural especializado, **`AGENTS.md`** para diretrizes operacionais de cada repositório e **`PRINCIPLES.md`** para axiomas inegociáveis de design de software.
-- **O Método Socrático com IA (Epistemologia Rigorosa):**
-    > **Perguntar sempre, a toda hora e sobre tudo.** Jamais aceitar as afirmações de um modelo de linguagem como verdades consolidadas até que sejam submetidas a validações empíricas, testes adversariais e comprovação formal. No desenvolvimento de software perto do metal, **99% de certeza não basta** — o 1% restante é precisamente onde residem vazamentos de memória, undefined behaviors e falhas silenciosas de concorrência. A IA deve ser usada como uma contraparte socrática dialética: desafiando hipóteses, questionando decisões de arquitetura e elevando o rigor técnico a 100%.
-- **A Primazia do Compilador Determinístico (Garantias Matemáticas > Alucinações de IA):**
-    > Prefiro infinitamente o rigor inabalável de um **compilador determinístico** me auxiliando do que depender cegamente de qualquer inteligência artificial. É exatamente por isso que amo linguagens com sistemas de tipos fortes e compiladores intransigentes como **Rust, Zig, C, C++ e Go** (e o próprio **Svelte** no frontend): um compilador estrito não tem "humores", não alucina e não aceita suposições — ele impõe tipos, tempo de vida de memória, integridade estrutural e garantias matemáticas sólidas em tempo de compilação. Se o compilador validou o código e gerou o binário, temos garantias axiomáticas que nenhuma heurística probabilística jamais conseguirá entregar. A IA é uma excelente assistente socrática e parceira de ideação, mas o compilador determinístico e a verificação formal são os árbitros supremos da verdade técnica.
+- Nenhum dos dois dá a mínima para os hypes passageiros que morrem no ano seguinte.
+- Ambos funcionam como o **mínimo denominador comum** universal que permite que monitores, placas de som, teclados e drivers conversem a mesmíssima língua em qualquer plataforma.
+- Adoro criar minhas próprias engines de jogos e ferramentas interativas usando **SDL3**. Com as novidades do **SDL_GPU**, **WebGPU** e **QRhi**, consigo modelar a arquitetura real das placas de vídeo modernas (pipelines imutáveis, command buffers e barreiras explícitas de memória) com clareza cristalina, fugindo das 1.500 linhas de dor do Vulkan cru e longe de engines "caixa-preta" prontas que tiram toda a graça do aprendizado.
 
 ---
 
-## 🏛️ O Sexteto de Engenharia (Os 6 Hubs Federados)
+### 3. Sistemas, Arquitetura & O Monólito Sem Preconceito
 
-Meu GitHub é estruturado em torno de **6 ecossistemas federados e soberanos**, cada um atuando como um hub orquestrador independente:
+Frameworks vêm e vão a cada seis meses, mas boas decisões de dados e arquitetura duram décadas:
 
-| Hub                                                               | Foco & Responsabilidade                                          | Tecnologias Centrais             | Componentes Canônicos                               |
-| :---------------------------------------------------------------- | :--------------------------------------------------------------- | :------------------------------- | :-------------------------------------------------- |
-| [**`environment`**](https://github.com/GabrielFrigo4/environment) | Orquestrador de estações de trabalho e dotfiles soberanos        | POSIX Shell, Elisp, Lua, C       | `Setup`, `Shell`, `Vault`, `Profile`, `Editores`    |
-| [**`foundation`**](https://github.com/GabrielFrigo4/foundation)   | Utilitários de sistema, elevação de privilégios e acervo técnico | C99, POSIX.1, LaTeX, Git         | `Sysutils` (`rtdo`/`rtgo`), `Library`, `Raw Text`   |
-| [**`research`**](https://github.com/GabrielFrigo4/research)       | Pesquisa acadêmica em Otimização Combinatória e Grafos           | C++23, LaTeX, DIMACS             | `Network Flow` (Fluxo Máximo e Custo Mínimo, Livro) |
-| [**`training`**](https://github.com/GabrielFrigo4/training)       | Hub de maratonas algorítmicas e programação competitiva          | C++23, Rust, Python, Bash        | `Algorithms` (Templates, CLI `cpt`), `Marathon`     |
-| [**`personal`**](https://github.com/GabrielFrigo4/personal)       | Engines de jogos, protocolos, servidores e laboratórios          | C/C++, Rust, SDL3, Lisp, Sockets | `Engines`, `Systems`, `Labs`, `Identity`, `OSS`     |
-| [**`venture`**](https://github.com/GabrielFrigo4/venture)         | Soluções de mercado, logística operacional e produtos            | Go, Google OR-Tools, PocketBase  | `OptiLaser` (Motor VRPTW & Copiloto)                |
+- **O Poder Titânico do SQLite em modo WAL:** Tenho uma admiração profunda pela engenharia do SQLite. Quando configurado com _Write-Ahead Logging_ (WAL) e transações otimizadas, ele entrega latência de nanossegundos em memória/VFS, integridade ACID impecável em um único arquivo, zero sobrecarga de rede e zero demônios em segundo plano. Para serviços locais, monólitos coesos e ferramentas autônomas, sua eficiência é imbatível.
+- **A Tríade Relacional em Escala:** Obviamente, nem tudo se resolve com banco embutido. Quando o projeto pede concorrência massiva multi-writer, particionamento declarativo, índices geoespaciais com PostGIS ou JSONB turbinado com índices GIN, o **PostgreSQL** é meu parceiro de guerra absoluto. Paralelamente, **MySQL** e **MariaDB** formam a muralha veterana e hiper-testada para grandes volumes de leitura.
+- **Gestão & Modelagem Visual com DBeaver:** Para transitar entre esses diferentes motores, explorar esquemas, analisar planos de execução (`EXPLAIN`) e debugar queries com precisão sem fricção entre bancos locais e remotos, o **DBeaver** é meu canivete suíço visual indispensável.
+- **PocketBase + Go + Let's Encrypt:** O exemplo prático do que eu amo em engenharia: simplicidade extrema. Um único binário compilado em Go, com SQLite WAL embutido e emissão nativa de certificados SSL sem precisar quebrar a cabeça configurando proxies reversos monstruosos. Se o sistema não atende o planeta inteiro de uma vez, não há motivo para pagar a conta de sanidade mental de 50 microsserviços.
+- **O Frontend sem Inchaço com o Compilador do Svelte ([svelte.dev](https://svelte.dev/)):** A mesma intolerância ao inchaço que tenho no terminal eu levo para a web. Rejeito as centenas de megabytes de dependências e a sobrecarga de Virtual DOMs gigantescos. O **Svelte** e o **SvelteKit** encaram o frontend como um **compilador**: transformam seus componentes em JavaScript reativo e cirúrgico em tempo de build. É leve, é direto ao ponto e entrega bundles minúsculos.
+
+---
+
+### 4. Ciência, Grafos & O Ritmo Alucinante das Maratonas
+
+Minha formação acadêmica e meu tempo livre convergem para a densidade algorítmica:
+
+- **Iniciação Científica (UFABC / PIBIC):** Pesquiso Problemas de Fluxos em Redes (_Network Flows_: Fluxo Máximo e Fluxo de Custo Mínimo), implementando e refinando algoritmos em C++23 e validando com instâncias canônicas da DIMACS.
+- **Programação Competitiva:** Membro ativo da equipe **GRUB da UFABC**. Treinamento intensivo mirando a **Final Nacional do ICPC 2026**, Codeforces, Maratona Paulista e OBI. A sensação de resolver um problema complexo sob pressão de tempo com complexidade assintótica ótima é uma adrenalina única!
+
+---
+
+## ⚡ Minhas Ferramentas de Batalha: Ergonomia Hacker & IA Socrática
+
+### Editores Modais & Teclado Puro
+
+Navegação em texto puro, sem tirar as mãos da fileira central e com resposta instantânea:
+
+- **Helix:** Meu editor modal moderno favorito. Filosofia `selection -> action`, tree-sitter nativo e LSP funcionando liso sem precisar instalar 40 plugins.
+- **Vim & Neovim:** O clássico eterno e seu ecossistema moderno em Lua para quando quero extensibilidade total.
+- **GNU Emacs:** Não é só um editor, é um ambiente Lisp vivo. Estruturado com gerenciador transacional **Elpaca**, LSP nativo via **Eglot**, **Org Mode** para organizar a vida e ciclo de vida conectado via daemon com socket Unix.
+- **VS Code / Code-OSS:** Para quando uma inspeção gráfica ou depuração visual acelera o trabalho pontual.
+
+### Shells & Soberania Multi-OS
+
+Trânsito livre e confortável entre qualquer ambiente:
+
+- **UNIX / POSIX:** **Zsh** como shell interativo de alta produtividade; **Bash** e o ultrarrápido **FreeBSD `/bin/sh`** para automação estrita e portabilidade universal; **OpenBSD `/bin/ksh`** quando o foco é pureza e segurança.
+- **Windows Turbinado:** **PowerShell** para automação com objetos; **Nushell** para pipelines com tabelas estruturadas; e o bom e velho **CMD com Clink**, que injeta **GNU Readline** e scripts Lua com keybindings Vi diretamente no prompt do Windows!
+
+### Inspeção Cirúrgica: Redes & Protocolos
+
+Quando a teoria acaba e o que vale é o dado bruto trafegando no meio físico:
+
+- **Wireshark:** Meu microscópio essencial para quando preciso ver a verdade nua e crua passando pelo fio. Nada de suposições sobre a camada de rede e transporte: dissecar frames Ethernet, handshakes TCP, fluxos UDP e payloads binários com filtros de captura cirúrgicos (`display filters`) para encontrar o que está realmente acontecendo no tráfego.
+
+### Inteligência Artificial Socrática & A Primazia do Compilador Determinístico
+
+Uso inteligência artificial diariamente em fluxos agênticos avançados com o ecossistema **Google Antigravity** (CLI `agy`, IDE, 2.0 e SDK Python), mas sigo dois princípios que nunca abro mão:
+
+> **1. O Método Socrático com IA (Perguntar sempre, desafiar tudo):**
+> Jamais trato respostas de modelos como verdades absolutas. Perto do metal, **99% de certeza não basta** — o 1% restante é onde moram vazamentos de memória, condições de corrida e comportamentos indefinidos (UB). A IA é fantástica quando usada como contraparte dialética: para bater ideias, apontar cantos obscuros e questionar decisões.
+
+> **2. Compiladores Determinísticos > Alucinações Probabilísticas:**
+> Prefiro mil vezes o rigor intransigente de um **compilador determinístico** do que suposições estatísticas. É exatamente por isso que tenho um caso de amor com linguagens de tipagem estrita como **Rust, Zig, C, C++ e Go** (e o compilador do **Svelte** na web): o compilador não acorda de mau humor, não alucina e não aceita atalhos. Se o compilador validou e gerou o binário, temos garantias matemáticas concretas de execução.
 
 ---
 
 ## 🛠️ Stack Tecnológico & Domínios
 
-### Sistemas Operacionais & Ambientes de Host
+### Sistemas Operacionais & Ambientes
 
 ![FreeBSD](https://img.shields.io/badge/FreeBSD-Primary_Workstation-red?logo=freebsd&logoColor=white)
 ![OpenBSD](https://img.shields.io/badge/OpenBSD-Security_%26_Purity-yellow?logo=openbsd&logoColor=white)
@@ -182,9 +163,10 @@ Meu GitHub é estruturado em torno de **6 ecossistemas federados e soberanos**, 
 ![Windows](<https://img.shields.io/badge/Windows_(MSYS2)-Tooling_%26_Clink-purple?logo=gitforwindows&logoColor=white>)
 ![CheriBSD](https://img.shields.io/badge/CheriBSD-Capabilities_Research-darkred?logo=freebsd&logoColor=white)
 
-### Infraestrutura Soberana, Redes & Perto do Metal
+### Infraestrutura, Redes & Perto do Metal
 
 ![Packet Filter](<https://img.shields.io/badge/PF-Packet_Filter_(BSD)-1b4332?logo=openbsd&logoColor=white>)
+![Wireshark](https://img.shields.io/badge/Network-Wireshark-1679A7?logo=wireshark&logoColor=white)
 ![Sylve](https://img.shields.io/badge/Sylve-bhyve_%26_Jails-blue?logo=freebsd&logoColor=white)
 ![OpenZFS](https://img.shields.io/badge/Storage-OpenZFS-black?logo=openzfs&logoColor=white)
 ![POSIX](https://img.shields.io/badge/Standard-POSIX.1-black?logo=ieee&logoColor=white)
@@ -235,12 +217,13 @@ Meu GitHub é estruturado em torno de **6 ecossistemas federados e soberanos**, 
 ![PocketBase](https://img.shields.io/badge/Backend-PocketBase-B8DBE8?logo=pocketbase&logoColor=white)
 ![Let's Encrypt](https://img.shields.io/badge/Security-Let's_Encrypt-003A70?logo=letsencrypt&logoColor=white)
 
-### Bancos de Dados Relacionais & Motores de Decisão
+### Bancos de Dados Relacionais & Otimizadores
 
 ![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-4169E1?logo=postgresql&logoColor=white)
 ![MySQL](https://img.shields.io/badge/Database-MySQL-4479A1?logo=mysql&logoColor=white)
 ![MariaDB](https://img.shields.io/badge/Database-MariaDB-003545?logo=mariadb&logoColor=white)
 ![SQLite](https://img.shields.io/badge/Database-SQLite-003B57?logo=sqlite&logoColor=white)
+![DBeaver](https://img.shields.io/badge/GUI-DBeaver-372923?logo=dbeaver&logoColor=white)
 ![OR-Tools](https://img.shields.io/badge/Solvers-Google_OR--Tools-4285F4?logo=google&logoColor=white)
 
 ### Editores & Ambientes de Desenvolvimento
@@ -295,7 +278,9 @@ Meu GitHub é estruturado em torno de **6 ecossistemas federados e soberanos**, 
 
 ---
 
-## 🤝 Conexões & Presença
+## 🤝 Bora trocar uma ideia?
+
+Sempre topo conversar sobre engenharia de sistemas, maratonas algorítmicas, desenvolvimento de engines ou sobre projetos de ensino e extensão universitária. Sinta-se em casa para me dar um toque!
 
 <div align="center">
   <a href="https://gabrielfrigo.dev.br">
