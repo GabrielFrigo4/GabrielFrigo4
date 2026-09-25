@@ -83,10 +83,11 @@ Existe uma profunda simetria entre o **POSIX** e a **SDL (Simple DirectMedia Lay
 - Ambos operam como o **mínimo denominador comum** universal que permite a plataformas, drivers, displays e placas de som conversarem exatamente a mesma língua.
 - Não são tecnologias defasadas: são **maduras, ultra-estáveis e impecáveis no que se propõem a fazer**.
 - **A GPU Moderna sem Fricção Bizantina:** Adoção de **SDL_GPU**, **WebGPU** e **QRhi** — modelam a arquitetura real das placas modernas (pipelines imutáveis, command buffers, bind groups e barreiras explícitas) sem a loucura de 1.500 linhas de boilerplate bare-metal em Vulkan ou DirectX 12 só pra desenhar um triângulo, e longe de caixas-pretas alienantes (SFML, Raylib).
+- **Computação Paralela Massiva (GPGPU):** Domínio de **NVIDIA CUDA** para processamento vetorial de alto desempenho em GPU, escalonamento massivo em warps e memória compartilhada.
 - **Áudio Nativo & Padrões Gráficos:**
     - **OSS (Open Sound System):** A elegância do `/dev/dsp` e ioctl direto no FreeBSD, sem servidores de som intermediários consumindo CPU e adicionando latência.
     - **ALSA & SDL Audio:** Suporte a baixo nível no Linux e a camada unificada e consistente do SDL3.
-    - **OpenGL**, **OpenCL** e **OpenAL**: Preservados e estudados como marcos clássicos formativos da computação gráfica, GPGPU e áudio 3D.
+    - **OpenGL**, **OpenCL** e **OpenAL**: Preservados e estudados como marcos clássicos formativos e legados históricos da computação gráfica, GPGPU e áudio 3D.
 
 ### 3. Sistemas, Arquitetura & Bancos de Dados: Do Monólito à Nuvem
 
@@ -100,6 +101,7 @@ Frameworks e hypes são efêmeros; filosofias arquiteturais e dados confiáveis 
     - **FreeBSD:** Estação de trabalho primária e servidores bare-metal, explorando orquestração moderna com **Sylve** (Jails e virtualização bhyve sobre datasets OpenZFS) e segurança por capabilities com **Capsicum**.
     - **OpenBSD:** A referência máxima em pureza de código, simplicidade arquitetural e segurança proativa por design, com isolamento estrito de processos via `pledge(2)` e `unveil(2)`.
     - **Linux:** O motor universal de servidores em nuvem, contêineres e nós de processamento distribuído de alto desempenho.
+    - **illumos (OpenIndiana / SmartOS):** A linhagem clássica e refinada do UNIX Solaris/SunOS, oferecendo **Solaris Zones** nativas, isolamento de rede virtualizado via **Crossbow** e rastreabilidade dinâmica cirúrgica de kernel com **DTrace**.
     - **PF (Packet Filter):** O padrão definitivo de firewall e engenharia de tráfego de rede defensiva nos BSDs, combinando regras declarativas limpas, NAT de alta velocidade e controle fino de estados no kernel.
 
 ### 4. Ciência, Algoritmos & Maratonas
@@ -170,6 +172,7 @@ Meu GitHub é estruturado em torno de **6 ecossistemas federados e soberanos**, 
 ![FreeBSD](https://img.shields.io/badge/FreeBSD-Primary_Workstation-red?logo=freebsd&logoColor=white)
 ![OpenBSD](https://img.shields.io/badge/OpenBSD-Security_%26_Purity-yellow?logo=openbsd&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-Servers_%26_Cloud-blue?logo=linux&logoColor=white)
+![illumos](https://img.shields.io/badge/illumos-Zones_%26_DTrace-orange?logo=openzfs&logoColor=white)
 ![Windows](<https://img.shields.io/badge/Windows_(MSYS2)-Tooling_%26_Clink-purple?logo=gitforwindows&logoColor=white>)
 ![CheriBSD](https://img.shields.io/badge/CheriBSD-Capabilities_Research-darkred?logo=freebsd&logoColor=white)
 
@@ -198,6 +201,7 @@ Meu GitHub é estruturado em torno de **6 ecossistemas federados e soberanos**, 
 
 ![SDL3](https://img.shields.io/badge/Runtime-SDL3-informational?logo=c&logoColor=white)
 ![SDL_GPU](https://img.shields.io/badge/GPU-SDL__GPU-blue?logo=vulkan&logoColor=white)
+![NVIDIA CUDA](https://img.shields.io/badge/GPGPU-NVIDIA_CUDA-76B900?logo=nvidia&logoColor=white)
 ![SDL_Audio](https://img.shields.io/badge/Audio-SDL__Audio-blue?logo=airplayaudio&logoColor=white)
 ![WebGPU](https://img.shields.io/badge/GPU-WebGPU-orange?logo=webgpu&logoColor=white)
 ![QRhi](https://img.shields.io/badge/GPU-QRhi-green?logo=qt&logoColor=white)
