@@ -104,7 +104,7 @@ Frameworks e hypes são efêmeros; filosofias arquiteturais e dados confiáveis 
     - **illumos (OpenIndiana / SmartOS):** A linhagem clássica e refinada do UNIX Solaris/SunOS, oferecendo **Solaris Zones** nativas, isolamento de rede virtualizado via **Crossbow** e rastreabilidade dinâmica cirúrgica de kernel com **DTrace**.
     - **PF (Packet Filter):** O padrão definitivo de firewall e engenharia de tráfego de rede defensiva nos BSDs, combinando regras declarativas limpas, NAT de alta velocidade e controle fino de estados no kernel.
 - **Conteinerização & Sandboxing Soberano:**
-    - **Podman (Linux & FreeBSD Nativo):** O padrão moderno para contêineres OCI sem daemons e rootless no Linux, e com execução nativa OCI no FreeBSD via `runj` (rodando imagens do Docker Hub direto em Jails)!
+    - **Podman (Linux & FreeBSD):** O padrão moderno para contêineres OCI sem daemons e rootless no Linux, e com execução nativa OCI no FreeBSD via `runj` (rodando imagens do Docker Hub direto em Jails)!
     - **FreeBSD Jails & BastilleBSD:** O modelo pioneiro de particionamento de sistema operacional, orquestrado de forma reprodutível e declarativa com **BastilleBSD** sobre snapshots instantâneos do OpenZFS.
     - **Incus & LXC:** Contêineres de sistema completos (System Containers) de alta densidade no Linux sem a sobrecarga de VMs pesadas.
     - **Solaris Zones (illumos):** Particionamento nativo de hardware herdado do SunOS/Solaris, incluindo zonas `lx-brand` para binários Linux diretos no kernel illumos.
@@ -192,7 +192,7 @@ Meu GitHub é estruturado em torno de **6 ecossistemas federados e soberanos**, 
 
 ### Conteinerização, Sandboxing & Virtualização
 
-![Podman](https://img.shields.io/badge/Podman-Linux_%26_FreeBSD_Nativo-892CA0?logo=podman&logoColor=white)
+![Podman](https://img.shields.io/badge/Podman-Linux_%26_FreeBSD-892CA0?logo=podman&logoColor=white)
 ![Docker](https://img.shields.io/badge/OCI-Docker-2496ED?logo=docker&logoColor=white)
 ![Incus / LXC](https://img.shields.io/badge/System_Containers-Incus_%26_LXC-informational?logo=linuxcontainers&logoColor=white)
 ![Jails & Bastille](https://img.shields.io/badge/Jails-BastilleBSD-red?logo=freebsd&logoColor=white)
