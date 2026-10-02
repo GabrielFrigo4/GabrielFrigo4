@@ -9,7 +9,7 @@ Eu vejo este perfil como a **BIOS do meu ecossistema**: o lugar onde mostro não
 
 ---
 
-## 🏛️ Meu Laboratório: O Sexteto de Engenharia (Os 6 Hubs)
+## O Sexteto de Engenharia (Os 6 Hubs)
 
 Para não transformar meu GitHub em uma gaveta bagunçada de códigos soltos, estruturei todo o meu trabalho em torno de **6 ecossistemas federados e soberanos**. Cada um deles resolve uma frente do meu universo de desenvolvimento:
 
@@ -24,7 +24,7 @@ Para não transformar meu GitHub em uma gaveta bagunçada de códigos soltos, es
 
 ---
 
-## 🧠 Como eu penso Engenharia: A Tríade Canônica
+## Como Eu Penso Engenharia: A Tríade Canônica
 
 Fujo deliberadamente de dois extremos que considero armadilhas no desenvolvimento:
 

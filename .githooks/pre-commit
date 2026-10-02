@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+set -e
+
+git diff --check --cached
+
+git diff --cached --summary | grep 'mode change' | while read -r line; do
+	_mode=$(echo "$line" | awk '{print }')
+	if [ "$_mode" != '0644' ] && [ "$_mode" != '0755' ] && [ "$_mode" != '100644' ] && [ "$_mode" != '100755' ]; then
+		echo "❌ [pre-commit] Invalid file mode: $_mode"
+		exit 1
+	fi
+done
+
+_md_files=$(git diff --cached --name-only --diff-filter=ACM | grep '\.md$' || true)
+if [ -n "$_md_files" ]; then
+	npx prettier --check $_md_files
+fi
+
+exit 0
