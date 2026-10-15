@@ -35,19 +35,19 @@ format: prettier
 	echo "✅ Formatação concluída!"
 
 prettier:
-	echo "🎨 Formatando arquivos Markdown com Prettier..."
+	echo "🎨 Formatando arquivos com Prettier..."
 	if command -v prettier > "/dev/null" 2>&1; then \
-		prettier --write "**/*.md" 2> "/dev/null" || true; \
+		prettier --write "**/*.{md,json,yml,yaml}" 2> "/dev/null" || true; \
 	elif command -v npx > "/dev/null" 2>&1; then \
-		npx prettier --write "**/*.md" 2> "/dev/null" || true; \
+		npx --yes prettier --write "**/*.{md,json,yml,yaml}" 2> "/dev/null" || true; \
 	fi
 
 lint:
 	echo "🔍 Validando formatação com Prettier..."
 	if command -v prettier > "/dev/null" 2>&1; then \
-		prettier --check "**/*.md"; \
+		prettier --check "**/*.{md,json,yml,yaml}"; \
 	elif command -v npx > "/dev/null" 2>&1; then \
-		npx prettier --check "**/*.md"; \
+		npx --yes prettier --check "**/*.{md,json,yml,yaml}"; \
 	fi
 
 ### ================================
