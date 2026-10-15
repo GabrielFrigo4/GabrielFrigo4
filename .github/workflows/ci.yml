@@ -22,4 +22,4 @@ jobs:
               run: npm install -g prettier
 
             - name: Check Markdown formatting
-              run: prettier --check "**/*.md"
+              run: prettier --check "**/*.{md,json,jsonc,yml,yaml,html,css}"
