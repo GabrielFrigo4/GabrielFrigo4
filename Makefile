@@ -7,7 +7,7 @@ MAKEFLAGS += --no-print-directory -s
 # Makefile: GitHub Institutional Profile & BIOS
 # ----------------------------------------------------------------
 
-.PHONY: all help format prettier lint hooks ci
+.PHONY: all help format prettier lint hooks ci clean
 
 all: help
 
@@ -26,6 +26,7 @@ help:
 	cmd "lint"           "Valida conformidade de formatação com Prettier"; \
 	cmd "hooks"          "Configura e ativa os quality gates locais (.githooks)"; \
 	cmd "ci"             "Executa pipeline local de validação de qualidade"; \
+	cmd "clean"          "Remove caches e ambientes virtuais (.venv)"; \
 	echo ""
 
 ### ================================
@@ -64,3 +65,12 @@ hooks:
 ### ================================
 ci: lint
 	echo "✅ Quality Gate CI concluído com sucesso!"
+
+### ================================
+### CLEANUP
+### ================================
+clean:
+	echo "🧹 Limpando artefatos, caches e ambientes virtuais..."
+	rm -rf .venv bin/ build/ dist/ .tmp/ *.log
+	find . -type d -name "__pycache__" -exec rm -rf {} + 2> "/dev/null" || true
+	echo "✅ Workspace limpo!"
