@@ -131,7 +131,7 @@ Navegação em texto puro, sem tirar as mãos da fileira central e com resposta 
 
 Trânsito livre e confortável entre qualquer ambiente:
 
-- **UNIX / POSIX:** **Zsh** como shell interativo de alta produtividade; **Bash** e o ultrarrápido **FreeBSD `/bin/sh`** para automação estrita e portabilidade universal; **OpenBSD `/bin/ksh`** quando o foco é pureza e segurança.
+- **UNIX / POSIX:** **Zsh** como shell interativo de alta produtividade; **Bash** e o ultrarrápido **FreeBSD `sh`** para automação estrita e portabilidade universal; **OpenBSD `ksh`** quando o foco é pureza e segurança.
 - **Windows Turbinado:** **PowerShell** para automação com objetos; **Nushell** para pipelines com tabelas estruturadas; e o bom e velho **CMD com Clink**, que injeta **GNU Readline** e scripts Lua com keybindings Vi diretamente no prompt do Windows!
 
 ### Inspeção Cirúrgica: Redes & Protocolos
